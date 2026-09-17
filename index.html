@@ -1,4 +1,4 @@
-</html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -6,716 +6,1078 @@
 
 <title>Point Architects | Architecture • Interiors • Planning</title>
 
-<meta name="description" content="Point Architects — architecture, interiors and planning by Ar. Shaikh Tousif Husen and Syed Mohammad Ayyub Zeeshan.">
+<meta name="description" content="Point Architects — Architecture, Interiors and Planning by Tousif Shaikh and Zeeshan Chistey.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 
-:root{
---black:#11110f;
---paper:#f7f4ec;
---cream:#ece5d8;
---white:#fff;
---gold:#b59a68;
---muted:#777269;
---line:rgba(20,19,16,.14);
-}
+/* =========================================================
+   RESET
+========================================================= */
 
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-font-family:"DM Sans",Arial,sans-serif;
-background:var(--paper);
-color:#171612;
+body {
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+    background: #f4efe5;
+    color: #171717;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
 }
 
-a{
-text-decoration:none;
-color:inherit;
+img {
+    display: block;
+    max-width: 100%;
 }
 
-img{
-width:100%;
-height:100%;
-object-fit:cover;
-display:block;
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
-.container{
-width:min(1180px,calc(100% - 44px));
-margin:auto;
+button {
+    font: inherit;
 }
 
-.eyebrow{
-font-size:9px;
-letter-spacing:3px;
-text-transform:uppercase;
-color:var(--muted);
-margin-bottom:9px;
-}
+/* =========================================================
+   VARIABLES
+========================================================= */
 
-.title{
-font:400 clamp(38px,4.5vw,56px)/1.05 "Playfair Display",serif;
-letter-spacing:-1px;
+:root {
+    --cream: #f4efe5;
+    --cream-dark: #e9e0d0;
+    --black: #111111;
+    --gold: #c8a96b;
+    --gray: #77736c;
+    --line: rgba(20,20,20,.16);
 }
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    padding: 24px 4vw;
 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-/* ================= NAVIGATION ================= */
+    color: white;
 
-.nav{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-z-index:20;
-color:#fff;
-padding:25px 40px;
-display:flex;
-align-items:center;
-justify-content:space-between;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,.55),
+        rgba(0,0,0,0)
+    );
+
+    transition: .4s ease;
 }
 
-.brand{
-display:flex;
-align-items:center;
-gap:12px;
+.site-header.scrolled {
+    background: rgba(17,17,17,.95);
+    backdrop-filter: blur(10px);
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
+
+/* LOGO */
 
-.brand-mark{
-width:40px;
-height:40px;
-border:1px solid #fff;
-display:grid;
-place-items:center;
-font:500 25px "Playfair Display";
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
 }
+
+.logo-box {
+    width: 48px;
+    height: 48px;
+
+    border: 1px solid rgba(255,255,255,.8);
+
+    display: grid;
+    place-items: center;
 
-.brand-name{
-font-size:14px;
-letter-spacing:4px;
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
 }
 
-.brand-sub{
-font-size:7px;
-letter-spacing:2px;
-opacity:.72;
-margin-top:4px;
+.logo-text strong {
+    display: block;
+
+    font-size: 15px;
+    letter-spacing: 6px;
+    font-weight: 400;
 }
+
+.logo-text span {
+    display: block;
 
-.nav-links{
-display:flex;
-gap:29px;
-font-size:9px;
-letter-spacing:1.8px;
+    margin-top: 5px;
+
+    font-size: 8px;
+    letter-spacing: 3px;
+    opacity: .7;
 }
+
+/* DESKTOP NAV */
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 34px;
 
-.nav-links a:hover{
-color:#d9c397;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-.menu{
-display:none;
-font-size:25px;
-cursor:pointer;
+.nav a {
+    position: relative;
 }
 
+.nav a::after {
+    content: "";
 
-/* ================= HERO ================= */
+    position: absolute;
+    left: 0;
+    bottom: -7px;
 
-.hero{
-height:100vh;
-min-height:680px;
-position:relative;
-overflow:hidden;
-color:#fff;
+    width: 0;
+    height: 1px;
+
+    background: white;
+
+    transition: .3s ease;
 }
 
-.hero-photo{
-position:absolute;
-inset:0;
-background:#222;
+.nav a:hover::after {
+    width: 100%;
 }
+
+/* MOBILE MENU BUTTON */
+
+.menu-btn {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    border: 1px solid rgba(255,255,255,.6);
+    background: transparent;
 
-.hero-photo img{
-object-position:center 35%;
+    color: white;
+
+    cursor: pointer;
 }
+
+.menu-btn span,
+.menu-btn span::before,
+.menu-btn span::after {
+    display: block;
 
-.hero-photo:after{
-content:"";
-position:absolute;
-inset:0;
+    width: 21px;
+    height: 1px;
 
-background:
-linear-gradient(
-90deg,
-rgba(0,0,0,.72),
-rgba(0,0,0,.22) 70%
-),
-linear-gradient(
-0deg,
-rgba(0,0,0,.35),
-transparent 50%
-);
+    background: white;
+
+    transition: .3s ease;
 }
 
-.hero-inner{
-height:100%;
-display:flex;
-align-items:center;
-position:relative;
-z-index:2;
+.menu-btn span {
+    position: relative;
 }
 
-.hero-copy{
-max-width:680px;
-padding-top:45px;
+.menu-btn span::before,
+.menu-btn span::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
 }
 
-.hero-kicker{
-font-size:10px;
-letter-spacing:3px;
-text-transform:uppercase;
-margin-bottom:17px;
+.menu-btn span::before {
+    top: -7px;
 }
 
-.hero h1{
-font:400 clamp(52px,7vw,91px)/.97 "Playfair Display",serif;
-letter-spacing:-3px;
+.menu-btn span::after {
+    top: 7px;
 }
+
+/* =========================================================
+   MOBILE NAV
+========================================================= */
+
+.mobile-nav {
+    position: fixed;
+    inset: 0;
+
+    z-index: 900;
+
+    background: #111;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
 
-.hero h1 em{
-font-style:normal;
-color:#d4bb8a;
+    transition: .4s ease;
 }
 
-.hero p{
-max-width:540px;
-margin:25px 0;
-font-size:13px;
-line-height:1.8;
-color:#e8e4db;
+.mobile-nav.open {
+    opacity: 1;
+    visibility: visible;
 }
 
-.founders-line{
-font-size:10px;
-letter-spacing:1.7px;
-text-transform:uppercase;
+.mobile-nav-inner {
+    text-align: center;
 }
 
-.founders-line small{
-display:block;
-font-size:8px;
-letter-spacing:2px;
-opacity:.65;
-margin-top:5px;
+.mobile-nav a {
+    display: block;
+
+    margin: 25px 0;
+
+    color: white;
+
+    font-family: "Playfair Display", serif;
+    font-size: 42px;
 }
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 100svh;
 
-.hero-btn{
-display:inline-flex;
-align-items:center;
-gap:24px;
-margin-top:28px;
-padding:14px 20px;
-border:1px solid rgba(255,255,255,.7);
-font-size:9px;
-letter-spacing:1.5px;
-transition:.3s;
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.86),
+            rgba(0,0,0,.52),
+            rgba(0,0,0,.18)
+        ),
+        url("images/project-01.jpg") center center / cover no-repeat;
+
+    color: white;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding: 150px 7vw 90px;
 }
 
-.hero-btn:hover{
-background:#fff;
-color:#111;
+.hero-content {
+    max-width: 900px;
 }
 
-.side-text{
-position:absolute;
-right:25px;
-top:48%;
-writing-mode:vertical-rl;
-font-size:8px;
-letter-spacing:4px;
-z-index:3;
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
 }
 
-.scroll{
-position:absolute;
-right:42px;
-bottom:30px;
-font-size:8px;
-letter-spacing:2px;
-z-index:3;
-display:flex;
-gap:10px;
-align-items:center;
+.hero h1 {
+    max-width: 900px;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(48px, 7vw, 105px);
+    line-height: .92;
+    font-weight: 400;
 }
 
-.mouse{
-width:16px;
-height:30px;
-border:1px solid #fff;
-border-radius:15px;
+.hero h1 span {
+    color: var(--gold);
 }
 
+.hero-description {
+    max-width: 700px;
 
-/* ================= PROJECTS ================= */
+    margin-top: 35px;
 
-section{
-padding:90px 0;
-}
+    font-size: 16px;
+    line-height: 1.7;
 
-.section-head{
-display:flex;
-justify-content:space-between;
-align-items:flex-end;
-margin-bottom:32px;
+    color: rgba(255,255,255,.8);
 }
 
-.view{
-font-size:9px;
-letter-spacing:1.5px;
-border-bottom:1px solid;
-padding-bottom:5px;
-}
+.founders {
+    margin-top: 38px;
 
-.project-grid{
-display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:12px;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
 }
 
-.project{
-height:470px;
-position:relative;
-overflow:hidden;
-background:#333;
-color:#fff;
-}
+.founders-sub {
+    margin-top: 8px;
 
-.project img{
-transition:.7s;
-}
+    font-size: 9px;
+    letter-spacing: 3px;
 
-.project:hover img{
-transform:scale(1.05);
+    color: rgba(255,255,255,.55);
 }
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 30px;
+
+    margin-top: 40px;
 
-.project:after{
-content:"";
-position:absolute;
-inset:40% 0 0;
-background:linear-gradient(
-transparent,
-rgba(0,0,0,.88)
-);
+    padding: 17px 27px;
+
+    border: 1px solid rgba(255,255,255,.65);
+
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    transition: .3s ease;
 }
 
-.project-info{
-position:absolute;
-left:16px;
-right:16px;
-bottom:17px;
-z-index:2;
+.hero-btn:hover {
+    background: white;
+    color: #111;
 }
 
-.project-no{
-font-size:8px;
-letter-spacing:2px;
-margin-bottom:72px;
-opacity:.8;
+/* =========================================================
+   COMMON
+========================================================= */
+
+.section {
+    width: 100%;
+    padding: 120px 7vw;
 }
+
+.section-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
 
-.project h3{
-font:400 21px "Playfair Display",serif;
+    color: #77736c;
+
+    margin-bottom: 20px;
 }
 
-.project-meta{
-font-size:8px;
-opacity:.78;
-margin-top:5px;
-display:flex;
-gap:12px;
+.section-title {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 6vw, 78px);
+    font-weight: 400;
+    line-height: 1;
 }
 
+/* =========================================================
+   INTRO
+========================================================= */
 
-/* ================= PROCESS ================= */
+.intro {
+    background: var(--cream);
 
-.process{
-background:var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10vw;
+    align-items: center;
 }
 
-.process-layout{
-display:grid;
-grid-template-columns:270px 1fr;
-gap:60px;
+.intro-text {
+    max-width: 650px;
 }
 
-.process-copy p{
-font-size:11px;
-line-height:1.85;
-color:#666158;
-margin:20px 0;
-}
+.intro-text p {
+    margin-top: 35px;
 
-.outline{
-display:inline-block;
-border:1px solid;
-padding:12px 18px;
-font-size:9px;
-letter-spacing:1.4px;
+    font-size: 16px;
+    line-height: 1.9;
+
+    color: #5f5b54;
 }
 
-.steps{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:14px;
+.intro-side {
+    border-left: 1px solid var(--line);
+    padding-left: 50px;
 }
 
-.step-img{
-height:170px;
-margin-bottom:13px;
+.intro-side h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+    font-weight: 400;
 }
 
-.step-no{
-font-size:8px;
-letter-spacing:1.1px;
+.intro-side p {
+    margin-top: 20px;
+
+    color: #77736c;
+    line-height: 1.7;
 }
+
+/* =========================================================
+   PROJECTS
+========================================================= */
 
-.step h3{
-font:400 17px "Playfair Display",serif;
-margin:4px 0;
+.projects {
+    background: var(--cream);
 }
 
-.step p{
-font-size:9px;
-color:var(--muted);
+.section-heading-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    margin-bottom: 55px;
 }
 
+.text-link {
+    padding-bottom: 9px;
 
-/* ================= ABOUT ================= */
+    border-bottom: 1px solid #333;
 
-.about{
-padding:0;
-background:var(--black);
-color:#fff;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
-.about-grid{
-display:grid;
-grid-template-columns:1.05fr 1fr 1fr;
-}
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
-.about-image{
-min-height:560px;
+    gap: 18px;
 }
+
+.project-card {
+    position: relative;
 
-.about-copy,
-.people{
-padding:78px 48px;
-border-left:1px solid rgba(255,255,255,.13);
+    overflow: hidden;
+
+    background: #222;
+
+    min-height: 580px;
 }
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    min-height: 580px;
 
-.about .eyebrow{
-color:#98948a;
+    object-fit: cover;
+
+    transition: transform .8s cubic-bezier(.2,.7,.2,1);
 }
 
-.about-copy h2{
-font:400 37px/1.08 "Playfair Display",serif;
-margin-bottom:22px;
+.project-card:hover img {
+    transform: scale(1.04);
 }
+
+.project-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 30px;
+
+    color: white;
 
-.about-copy p,
-.person p{
-font-size:11px;
-line-height:1.8;
-color:#bbb7ae;
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.85),
+            rgba(0,0,0,.05) 65%
+        );
 }
 
-.services{
-display:flex;
-gap:18px;
-flex-wrap:wrap;
-margin-top:28px;
-font-size:8px;
-letter-spacing:1.2px;
+.project-number {
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-bottom: 100px;
 }
 
-.person{
-margin-bottom:35px;
+.project-name {
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
 }
 
-.person h3{
-font:400 23px "Playfair Display",serif;
+.project-type {
+    margin-top: 8px;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    opacity: .75;
 }
+
+/* =========================================================
+   PROCESS
+========================================================= */
 
-.role{
-font-size:8px;
-letter-spacing:1px;
-color:#98948a;
-margin:5px 0 9px;
+.process {
+    background: var(--cream-dark);
 }
 
+.process-grid {
+    margin-top: 70px;
 
-/* ================= GALLERY ================= */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 
-.gallery-grid{
-display:grid;
-grid-template-columns:repeat(6,1fr);
-gap:8px;
+    border-top: 1px solid var(--line);
 }
 
-.gallery-item{
-height:205px;
-overflow:hidden;
-position:relative;
-}
+.process-item {
+    min-height: 300px;
 
-.gallery-item img{
-transition:.5s;
+    padding: 35px 30px 35px 0;
+
+    border-right: 1px solid var(--line);
 }
 
-.gallery-item:hover img{
-transform:scale(1.05);
+.process-item:not(:first-child) {
+    padding-left: 30px;
 }
 
-.gallery-item span{
-position:absolute;
-left:10px;
-bottom:10px;
-color:#fff;
-font-size:8px;
-letter-spacing:1px;
-z-index:2;
+.process-item:last-child {
+    border-right: 0;
 }
 
+.process-number {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #77736c;
+}
 
-/* ================= CONTACT ================= */
+.process-item h3 {
+    margin-top: 25px;
 
-.contact-section{
-background:#e9e2d5;
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+    font-weight: 400;
 }
 
-.contact-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:70px;
-}
+.process-item p {
+    margin-top: 12px;
 
-.contact-copy p{
-font-size:12px;
-line-height:1.8;
-color:#656159;
-max-width:470px;
-margin-top:18px;
+    color: #77736c;
+    font-size: 13px;
 }
 
-.contact-box{
-border-top:1px solid var(--line);
-}
+/* =========================================================
+   STUDIO
+========================================================= */
 
-.contact-row{
-display:flex;
-justify-content:space-between;
-padding:16px 0;
-border-bottom:1px solid var(--line);
-font-size:10px;
+.studio {
+    background: #111;
+    color: white;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10vw;
 }
 
-.contact-row span:first-child{
-letter-spacing:1.5px;
-color:var(--muted);
+.studio .section-label {
+    color: #aaa;
 }
 
-.contact-note{
-font-size:8px;
-color:var(--muted);
-margin-top:18px;
+.studio .section-title {
+    color: white;
 }
 
+.studio-text p {
+    max-width: 620px;
 
-/* ================= FOOTER ================= */
+    margin-top: 35px;
 
-footer{
-background:#111;
-color:#fff;
-padding:40px 0 20px;
-}
+    line-height: 1.9;
 
-.footer-top{
-display:flex;
-justify-content:space-between;
-gap:25px;
-align-items:center;
-padding-bottom:28px;
-border-bottom:1px solid rgba(255,255,255,.13);
+    color: rgba(255,255,255,.65);
 }
+
+.people {
+    margin-top: 55px;
 
-.footer-brand{
-font-size:13px;
-letter-spacing:4px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    border-top: 1px solid rgba(255,255,255,.18);
 }
 
-.footer-brand small{
-display:block;
-color:#777;
-font-size:7px;
-letter-spacing:2px;
-margin-top:5px;
+.person {
+    padding: 25px 20px 0 0;
 }
 
-.footer-quote{
-font:400 20px "Playfair Display",serif;
+.person + .person {
+    padding-left: 25px;
+    border-left: 1px solid rgba(255,255,255,.18);
 }
 
-.footer-bottom{
-padding-top:19px;
-display:flex;
-justify-content:space-between;
-color:#68665f;
-font-size:8px;
+.person strong {
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 400;
 }
 
+.person span {
+    display: block;
 
-/* ================= TABLET ================= */
+    margin-top: 8px;
 
-@media(max-width:980px){
+    font-size: 9px;
+    letter-spacing: 2px;
 
-.nav{
-padding:20px;
+    color: #888;
 }
 
-.nav-links{
-display:none;
-}
+/* =========================================================
+   VISUAL JOURNAL
+========================================================= */
 
-.menu{
-display:block;
+.journal {
+    background: var(--cream);
 }
 
-.nav-links.open{
-display:flex;
-position:absolute;
-top:70px;
-left:15px;
-right:15px;
-background:rgba(17,17,15,.97);
-padding:22px;
-flex-direction:column;
-gap:18px;
+.journal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
 }
 
-.container{
-width:calc(100% - 32px);
-}
+.journal-card {
+    position: relative;
 
-.side-text{
-display:none;
+    overflow: hidden;
+
+    aspect-ratio: 1 / 1;
+
+    border: 1px solid rgba(20,20,20,.2);
 }
+
+.journal-card img {
+    width: 100%;
+    height: 100%;
 
-.scroll{
-right:20px;
+    object-fit: cover;
+
+    transition: .6s ease;
 }
 
-.project-grid{
-grid-template-columns:repeat(2,1fr);
+.journal-card:hover img {
+    transform: scale(1.05);
 }
+
+.journal-label {
+    position: absolute;
+    left: 18px;
+    bottom: 18px;
 
-.process-layout{
-grid-template-columns:1fr;
-gap:35px;
+    color: white;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    text-shadow: 0 1px 8px black;
 }
+
+/* =========================================================
+   CONTACT
+========================================================= */
 
-.steps{
-grid-template-columns:repeat(2,1fr);
+.contact {
+    background: var(--cream-dark);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10vw;
 }
 
-.about-grid{
-grid-template-columns:1fr;
+.contact-title {
+    max-width: 600px;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(48px, 6vw, 82px);
+    font-weight: 400;
+    line-height: .95;
 }
+
+.contact-description {
+    margin-top: 30px;
+
+    max-width: 550px;
 
-.about-image{
-height:430px;
-min-height:0;
+    color: #706b63;
+    line-height: 1.7;
 }
 
-.about-copy,
-.people{
-border-left:0;
-border-top:1px solid rgba(255,255,255,.13);
-padding:55px 25px;
+.contact-info {
+    border-top: 1px solid var(--line);
 }
 
-.gallery-grid{
-grid-template-columns:repeat(3,1fr);
+.contact-row {
+    min-height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-bottom: 1px solid var(--line);
 }
 
-.contact-grid{
-grid-template-columns:1fr;
-gap:40px;
+.contact-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #77736c;
 }
 
-.footer-top{
-flex-direction:column;
-align-items:flex-start;
+.contact-value {
+    text-align: right;
+    font-size: 12px;
 }
 
+.contact-value a:hover {
+    text-decoration: underline;
 }
 
+/* =========================================================
+   FOOTER
+========================================================= */
 
-/* ================= MOBILE ================= */
+footer {
+    width: 100%;
 
-@media(max-width:540px){
+    background: #111;
+    color: white;
 
-section{
-padding:70px 0;
+    padding: 65px 7vw 30px;
 }
 
-.hero{
-min-height:760px;
-}
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    padding-bottom: 55px;
 
-.hero h1{
-font-size:48px;
-letter-spacing:-2px;
+    border-bottom: 1px solid rgba(255,255,255,.15);
 }
 
-.hero-copy{
-padding-top:65px;
+.footer-brand {
+    font-size: 13px;
+    letter-spacing: 6px;
 }
 
-.project-grid,
-.steps{
-grid-template-columns:1fr;
+.footer-tagline {
+    margin-top: 25px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
 }
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 
-.project{
-height:430px;
+    color: #aaa;
 }
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 25px;
+
+    color: #777;
 
-.gallery-grid{
-grid-template-columns:repeat(2,1fr);
+    font-size: 9px;
 }
 
-.gallery-item{
-height:180px;
+/* =========================================================
+   RESPONSIVE TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .nav {
+        display: none;
+    }
+
+    .menu-btn {
+        display: grid;
+        place-items: center;
+    }
+
+    .section {
+        padding: 90px 5vw;
+    }
+
+    .intro,
+    .studio,
+    .contact {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .intro-side {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+
+        padding-left: 0;
+        padding-top: 30px;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .process-item:nth-child(2) {
+        border-right: 0;
+    }
+
+    .process-item:nth-child(3),
+    .process-item:nth-child(4) {
+        border-top: 1px solid var(--line);
+    }
+
+    .journal-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .site-header {
+        padding: 18px 20px;
+    }
+
+    .site-header.scrolled {
+        padding: 13px 20px;
+    }
+
+    .logo-box {
+        width: 40px;
+        height: 40px;
+        font-size: 23px;
+    }
+
+    .logo-text strong {
+        font-size: 12px;
+        letter-spacing: 4px;
+    }
+
+    .logo-text span {
+        font-size: 7px;
+        letter-spacing: 2px;
+    }
+
+    .hero {
+        min-height: 100svh;
+
+        padding: 130px 22px 65px;
+
+        background-position: 65% center;
+    }
+
+    .hero h1 {
+        font-size: clamp(44px, 13vw, 65px);
+    }
 
-.footer-bottom{
-flex-direction:column;
-align-items:flex-start;
-gap:10px;
+    .hero-description {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .founders {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .section {
+        padding: 75px 21px;
+    }
+
+    .section-heading-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .section-title {
+        font-size: 44px;
+    }
+
+    /* PROJECTS */
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .project-card {
+        min-height: 480px;
+    }
+
+    .project-card img {
+        min-height: 480px;
+    }
+
+    .project-name {
+        font-size: 28px;
+    }
+
+    .project-number {
+        margin-bottom: 70px;
+    }
+
+    /* PROCESS */
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-item,
+    .process-item:not(:first-child) {
+        min-height: auto;
+
+        padding: 30px 0;
+
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .process-item:nth-child(3),
+    .process-item:nth-child(4) {
+        border-top: 0;
+    }
+
+    .process-item:last-child {
+        border-bottom: 0;
+    }
+
+    /* STUDIO */
+
+    .people {
+        grid-template-columns: 1fr;
+    }
+
+    .person,
+    .person + .person {
+        padding: 20px 0;
+        border-left: 0;
+    }
+
+    .person + .person {
+        border-top: 1px solid rgba(255,255,255,.18);
+    }
+
+    /* JOURNAL */
+
+    .journal-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .journal-label {
+        font-size: 7px;
+        left: 10px;
+        bottom: 10px;
+    }
+
+    /* CONTACT */
+
+    .contact-row {
+        align-items: flex-start;
+
+        padding: 17px 0;
+
+        flex-direction: column;
+
+        gap: 7px;
+    }
+
+    .contact-value {
+        text-align: left;
+
+        font-size: 11px;
+
+        overflow-wrap: anywhere;
+    }
+
+    /* FOOTER */
+
+    footer {
+        padding: 55px 21px 25px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+    }
+
 }
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .logo-text strong {
+        font-size: 10px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .journal-grid {
+        grid-template-columns: 1fr;
+    }
 
 }
 
@@ -725,989 +1087,877 @@ gap:10px;
 
 <body>
 
+<!-- =======================================================
+     HEADER
+======================================================= -->
 
-<!-- ================= NAVIGATION ================= -->
+<header class="site-header" id="header">
 
-<header class="nav">
+    <a href="#top" class="logo">
 
-<a class="brand" href="#home">
+        <div class="logo-box">P</div>
 
-<div class="brand-mark">P</div>
+        <div class="logo-text">
+            <strong>POINT ARCHITECTS</strong>
+            <span>ARCHITECTURE • INTERIORS • PLANNING</span>
+        </div>
 
-<div>
-
-<div class="brand-name">
-POINT ARCHITECTS
-</div>
-
-<div class="brand-sub">
-ARCHITECTURE • INTERIORS • PLANNING
-</div>
-
-</div>
-
-</a>
+    </a>
 
 
-<nav class="nav-links">
+    <nav class="nav">
 
-<a href="#home">HOME</a>
+        <a href="#projects">Projects</a>
+        <a href="#studio">Studio</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
 
-<a href="#projects">PROJECTS</a>
-
-<a href="#process">PROCESS</a>
-
-<a href="#about">STUDIO</a>
-
-<a href="#contact">CONTACT</a>
-
-</nav>
+    </nav>
 
 
-<div class="menu">
-☰
-</div>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+        <span></span>
+    </button>
 
 </header>
 
 
+<!-- =======================================================
+     MOBILE NAV
+======================================================= -->
 
-<!-- ================= HERO ================= -->
+<div class="mobile-nav" id="mobileNav">
 
-<section class="hero" id="home">
+    <div class="mobile-nav-inner">
 
+        <a href="#projects">Projects</a>
+        <a href="#studio">Studio</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
 
-<div class="hero-photo">
-
-<!-- IMPORTANT: image is in the ROOT GitHub folder -->
-
-<img
-src="project-01.jpg"
-alt="Point Architects residential project"
->
-
-</div>
-
-
-<div class="container hero-inner">
-
-<div class="hero-copy">
-
-
-<div class="hero-kicker">
-Point Architects
-</div>
-
-
-<h1>
-
-Spaces with<br>
-
-Purpose.<br>
-
-Design with <em>Point.</em>
-
-</h1>
-
-
-<p>
-
-Architecture, interiors and planning shaped around people,
-place and everyday life — from the first idea to the final
-built form.
-
-</p>
-
-
-<div class="founders-line">
-
-AR. SHAIKH TOUSIF HUSEN
-&nbsp; | &nbsp;
-SYED MOHAMMAD AYYUB ZEESHAN
-
-<small>
-CO-FOUNDERS • PRINCIPAL ARCHITECTS
-</small>
+    </div>
 
 </div>
 
 
-<a class="hero-btn" href="#projects">
+<!-- =======================================================
+     HERO
+======================================================= -->
 
-EXPLORE PROJECTS
+<main id="top">
 
-<b>→</b>
+<section class="hero">
 
-</a>
+    <div class="hero-content">
 
+        <div class="eyebrow">
+            Point Architects
+        </div>
 
-</div>
+        <h1>
+            Spaces with<br>
+            Purpose.<br>
+            Design with <span>Point.</span>
+        </h1>
 
-</div>
+        <p class="hero-description">
+            Architecture, interiors and planning shaped around people,
+            place and everyday life — from the first idea to the final
+            built form.
+        </p>
 
+        <div class="founders">
+            Tousif Shaikh &nbsp; | &nbsp; Zeeshan Chistey
+        </div>
 
-<div class="side-text">
-ARCHITECTURE • INTERIORS • PLANNING
-</div>
+        <div class="founders-sub">
+            CO-FOUNDERS • PRINCIPAL ARCHITECTS
+        </div>
 
+        <a href="#projects" class="hero-btn">
+            Explore Projects
+            <span>→</span>
+        </a>
 
-<div class="scroll">
-
-SCROLL TO EXPLORE
-
-<div class="mouse"></div>
-
-</div>
-
+    </div>
 
 </section>
 
 
+<!-- =======================================================
+     INTRO
+======================================================= -->
 
-<!-- ================= PROJECTS ================= -->
+<section class="section intro">
 
-<section id="projects">
+    <div class="intro-text">
 
-<div class="container">
+        <div class="section-label">
+            01. Our Approach
+        </div>
 
+        <h2 class="section-title">
+            Architecture<br>
+            rooted in place.
+        </h2>
 
-<div class="section-head">
+        <p>
+            Point Architects approaches every project as a response
+            to its people, surroundings and purpose. We bring together
+            architecture, interiors and planning to create spaces that
+            are practical, expressive and lasting.
+        </p>
 
-<div>
+    </div>
 
-<div class="eyebrow">
-Selected Work
-</div>
 
-<h2 class="title">
-Projects by Point
-</h2>
+    <div class="intro-side">
 
-</div>
+        <h3>
+            From concept<br>
+            to built form.
+        </h3>
 
+        <p>
+            Every project begins with understanding — the site,
+            requirements, aspirations and possibilities — before
+            developing a clear architectural direction.
+        </p>
 
-<a class="view" href="#contact">
-START A PROJECT →
-</a>
-
-</div>
-
-
-
-<div class="project-grid">
-
-
-<article class="project">
-
-<img
-src="project-01.jpg"
-alt="Contemporary residential architecture project"
->
-
-<div class="project-info">
-
-<div class="project-no">
-01
-</div>
-
-<h3>
-Contemporary Residence
-</h3>
-
-<div class="project-meta">
-
-<span>RESIDENTIAL</span>
-<span>GULBARGA, KARNATAKA, INDIA</span>
-
-</div>
-
-</div>
-
-</article>
-
-
-
-<article class="project">
-
-<img
-src="project-02.jpg"
-alt="Mr. Yasar Ali residential building"
->
-
-<div class="project-info">
-
-<div class="project-no">
-02
-</div>
-
-<h3>
-Mr. Yasar Ali Residence
-</h3>
-
-<div class="project-meta">
-
-<span>RESIDENTIAL</span>
-<span>GULBARGA, KARNATAKA, INDIA</span>
-
-</div>
-
-</div>
-
-</article>
-
-
-
-<article class="project">
-
-<img
-src="project-03.jpg"
-alt="Gulbarga Hospital exterior"
->
-
-<div class="project-info">
-
-<div class="project-no">
-03
-</div>
-
-<h3>
-Gulbarga Hospital
-</h3>
-
-<div class="project-meta">
-
-<span>HEALTHCARE</span>
-<span>GULBARGA, KARNATAKA, INDIA</span>
-
-</div>
-
-</div>
-
-</article>
-
-
-
-<article class="project">
-
-<img
-src="project-04.jpg"
-alt="Gulbarga Hospital alternate view"
->
-
-<div class="project-info">
-
-<div class="project-no">
-04
-</div>
-
-<h3>
-Gulbarga Hospital — View
-</h3>
-
-<div class="project-meta">
-
-<span>HEALTHCARE</span>
-<span>GULBARGA, KARNATAKA, INDIA</span>
-
-</div>
-
-</div>
-
-</article>
-
-
-
-<article class="project">
-
-<img
-src="project-05.jpg"
-alt="Khan Manzil residence"
->
-
-<div class="project-info">
-
-<div class="project-no">
-05
-</div>
-
-<h3>
-Khan Manzil
-</h3>
-
-<div class="project-meta">
-
-<span>RESIDENTIAL</span>
-<span>GULBARGA, KARNATAKA, INDIA</span>
-
-</div>
-
-</div>
-
-</article>
-
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
+<!-- =======================================================
+     PROJECTS
+======================================================= -->
 
-<!-- ================= PROCESS ================= -->
+<section class="section projects" id="projects">
 
-<section class="process" id="process">
+    <div class="section-heading-row">
 
-<div class="container process-layout">
+        <div>
 
+            <div class="section-label">
+                Selected Work
+            </div>
 
-<div class="process-copy">
+            <h2 class="section-title">
+                Projects by Point
+            </h2>
 
-<div class="eyebrow">
-The Point Approach
-</div>
+        </div>
 
-<h2 class="title">
-From Idea<br>
-to Reality
-</h2>
+        <a href="#contact" class="text-link">
+            Start a Project →
+        </a>
 
-
-<p>
-
-We develop each project through a clear design journey,
-balancing function, character, context and buildability.
-
-</p>
-
-
-<a class="outline" href="#contact">
-
-DISCUSS YOUR PROJECT →
-
-</a>
-
-</div>
+    </div>
 
 
+    <div class="projects-grid">
 
-<div class="steps">
+        <!-- PROJECT 01 -->
 
+        <article class="project-card">
 
-<div class="step">
+            <img
+                src="images/project-01.jpg"
+                alt="Contemporary residential architecture project"
+                loading="lazy"
+            >
 
-<div class="step-img">
+            <div class="project-overlay">
 
-<img
-src="project-01.jpg"
-alt="Point Architects concept"
->
+                <div class="project-number">
+                    01
+                </div>
 
-</div>
+                <div class="project-name">
+                    Contemporary Residence
+                </div>
 
-<div class="step-no">
-01. CONCEPT
-</div>
+                <div class="project-type">
+                    Residential • India
+                </div>
 
-<h3>
-Understand
-</h3>
+            </div>
 
-<p>
-Brief, context & vision
-</p>
-
-</div>
-
-
-
-<div class="step">
-
-<div class="step-img">
-
-<img
-src="project-05.jpg"
-alt="Point Architects planning"
->
-
-</div>
-
-<div class="step-no">
-02. PLANNING
-</div>
-
-<h3>
-Develop
-</h3>
-
-<p>
-Plans & spatial strategy
-</p>
-
-</div>
+        </article>
 
 
+        <!-- PROJECT 02 -->
 
-<div class="step">
+        <article class="project-card">
 
-<div class="step-img">
+            <img
+                src="images/project-02.jpg"
+                alt="Mr. Yasar Ali residential building"
+                loading="lazy"
+            >
 
-<img
-src="project-03.jpg"
-alt="Point Architects visualisation"
->
+            <div class="project-overlay">
 
-</div>
+                <div class="project-number">
+                    02
+                </div>
 
-<div class="step-no">
-03. VISUALISE
-</div>
+                <div class="project-name">
+                    Mr. Yasar Ali Residence
+                </div>
 
-<h3>
-Experience
-</h3>
+                <div class="project-type">
+                    Residential • India
+                </div>
 
-<p>
-3D & material direction
-</p>
+            </div>
 
-</div>
-
-
-
-<div class="step">
-
-<div class="step-img">
-
-<img
-src="project-04.jpg"
-alt="Point Architects execution"
->
-
-</div>
-
-<div class="step-no">
-04. EXECUTE
-</div>
-
-<h3>
-Realise
-</h3>
-
-<p>
-Details & final outcome
-</p>
-
-</div>
+        </article>
 
 
-</div>
+        <!-- PROJECT 03 -->
 
-</div>
+        <article class="project-card">
+
+            <img
+                src="images/project-03.jpg"
+                alt="Gulbarga Hospital architecture"
+                loading="lazy"
+            >
+
+            <div class="project-overlay">
+
+                <div class="project-number">
+                    03
+                </div>
+
+                <div class="project-name">
+                    Gulbarga Hospital
+                </div>
+
+                <div class="project-type">
+                    Healthcare • India
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PROJECT 04 -->
+
+        <article class="project-card">
+
+            <img
+                src="images/project-04.jpg"
+                alt="Gulbarga Hospital architectural view"
+                loading="lazy"
+            >
+
+            <div class="project-overlay">
+
+                <div class="project-number">
+                    04
+                </div>
+
+                <div class="project-name">
+                    Gulbarga Hospital
+                </div>
+
+                <div class="project-type">
+                    Architecture • India
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PROJECT 05 -->
+
+        <article class="project-card">
+
+            <img
+                src="images/project-05.jpg"
+                alt="Khan Manzil residence"
+                loading="lazy"
+            >
+
+            <div class="project-overlay">
+
+                <div class="project-number">
+                    05
+                </div>
+
+                <div class="project-name">
+                    Khan Manzil
+                </div>
+
+                <div class="project-type">
+                    Residential • India
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PROJECT 06 -->
+
+        <article class="project-card">
+
+            <img
+                src="images/project-01.jpg"
+                alt="Point Architects residential project"
+                loading="lazy"
+            >
+
+            <div class="project-overlay">
+
+                <div class="project-number">
+                    06
+                </div>
+
+                <div class="project-name">
+                    Residential Project
+                </div>
+
+                <div class="project-type">
+                    Residential • India
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
 
 </section>
 
 
+<!-- =======================================================
+     PROCESS
+======================================================= -->
 
-<!-- ================= STUDIO ================= -->
+<section class="section process" id="process">
 
-<section class="about" id="about">
+    <div class="section-label">
+        How We Work
+    </div>
 
-<div class="about-grid">
-
-
-<div class="about-image">
-
-<img
-src="project-02.jpg"
-alt="Point Architects project"
->
-
-</div>
+    <h2 class="section-title">
+        From idea to reality.
+    </h2>
 
 
+    <div class="process-grid">
 
-<div class="about-copy">
+        <div class="process-item">
 
-<div class="eyebrow">
-The Studio
-</div>
+            <div class="process-number">
+                01. DISCOVER
+            </div>
 
+            <h3>
+                Understand
+            </h3>
 
-<h2>
+            <p>
+                Site, requirements, context and aspirations.
+            </p>
 
-Thoughtful architecture for the way people live,
-work and connect.
-
-</h2>
-
-
-<p>
-
-Point Architects is an architecture and design studio
-led by Ar. Shaikh Tousif Husen and Syed Mohammad Ayyub Zeeshan.
-
-Our portfolio brings together residential, healthcare
-and other built-environment projects with a focus on
-practical planning and distinctive visual character.
-
-</p>
+        </div>
 
 
-<div class="services">
+        <div class="process-item">
 
-<span>ARCHITECTURE</span>
+            <div class="process-number">
+                02. PLAN
+            </div>
 
-<span>INTERIORS</span>
+            <h3>
+                Develop
+            </h3>
 
-<span>PLANNING</span>
+            <p>
+                Plans, spatial strategy and architectural direction.
+            </p>
 
-<span>3D VISUALISATION</span>
-
-</div>
-
-
-</div>
-
-
-
-<div class="people">
+        </div>
 
 
-<div class="eyebrow">
-People Behind Point
-</div>
+        <div class="process-item">
+
+            <div class="process-number">
+                03. VISUALISE
+            </div>
+
+            <h3>
+                Experience
+            </h3>
+
+            <p>
+                3D visualisation, materials and design development.
+            </p>
+
+        </div>
 
 
-<div class="person">
+        <div class="process-item">
 
-<h3>
-Ar. Shaikh Tousif Husen
-</h3>
+            <div class="process-number">
+                04. EXECUTE
+            </div>
 
-<div class="role">
-CO-FOUNDER • PRINCIPAL ARCHITECT
-</div>
+            <h3>
+                Realise
+            </h3>
 
-<p>
-Ar. Shaikh Tousif Husen is an architect and entrepreneur based in Kalaburagi, Karnataka, with a growing presence in architecture, interior design, and construction. As the founder of Point Architects, he believes that good architecture is not only about creating beautiful spaces, but also about creating places that are practical, durable, meaningful, and built to last.
+            <p>
+                Details, coordination and final built outcome.
+            </p>
 
-Through Point Architects, Tousif has been involved in residential villas, apartments, commercial buildings, hospitals, interiors, renovations, and turnkey construction projects. His approach combines contemporary design with functionality, local understanding, quality construction, and close attention to detail.
+        </div>
 
-With hands-on involvement beyond design, he works closely with clients, engineers, contractors, vendors, and site teams throughout construction, giving him practical experience in execution, budgeting, materials, workmanship, and project management.
-
-His work reflects a preference for modern, elegant, and timeless design with a strong focus on functionality and client requirements. He also has experience in projects requiring detailed coordination and technical planning, including healthcare and large-scale residential developments.
-
-Beyond architecture, Tousif aims to build Point Architects into a respected regional design-and-construction organization known for professional service, quality construction, innovative design, and transparent client relationships.
-
-For Tousif, architecture is both a profession and a responsibility — an opportunity to transform ideas into spaces where people live, work, heal, and build their futures.
-
-Founder — Point Architects
-Architecture | Interior | Construction
-Kalaburagi, Karnataka
-</p>
-
-</div>
-
-
-
-<div class="person">
-
-<h3>
-Syed Mohammad Ayyub Zeeshan
-</h3>
-
-<div class="role">
-CO-FOUNDER • PRINCIPAL ARCHITECT
-</div>
-
-<p>
-Ar. Syed Mohammad Ayyub Zeeshan is a Bachelor of Architecture (B.Arch) graduate and an integral part of the professional journey behind Point Architects. Serving as Co-Founder and Project Architect, he has been a trusted professional partner since 2017.
-
-With nearly a decade of collaboration, Zeeshan has played an important role in translating architectural concepts into successfully executed projects. His involvement spans project planning, design coordination, site execution, client interaction, and ensuring that architectural ideas are carried through with attention to quality and detail.
-
-One of his strongest professional qualities is his excellent communication and coordination skills. His ability to communicate effectively with clients, consultants, contractors, engineers, and site teams has contributed significantly to smooth project execution and professional relationships.
-
-Since 2017, his partnership with Ar. Shaikh Tousif Husen has grown from a professional association into a strong working relationship built on trust, communication, shared responsibility, and a common vision for architecture and construction.
-
-As Co-Founder and Project Architect, Zeeshan continues to contribute to the growth of Point Architects with a practical, collaborative, and project-focused approach.
-
-Co-Founder & Project Architect — Point Architects
-B.Arch
-Partner since 2017
-Architecture | Interior | Construction
-</p>
-
-</div>
-
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
+<!-- =======================================================
+     STUDIO
+======================================================= -->
 
-<!-- ================= VISUAL JOURNAL ================= -->
+<section class="section studio" id="studio">
 
-<section>
+    <div>
 
-<div class="container">
+        <div class="section-label">
+            The Studio
+        </div>
 
+        <h2 class="section-title">
+            Two minds.<br>
+            One Point of view.
+        </h2>
 
-<div class="section-head">
-
-<div>
-
-<div class="eyebrow">
-Visual Journal
-</div>
-
-<h2 class="title">
-Architecture in Detail
-</h2>
-
-</div>
+    </div>
 
 
-<a class="view" href="#contact">
-FOLLOW POINT →
-</a>
+    <div class="studio-text">
 
-</div>
-
-
-
-<div class="gallery-grid">
-
-
-<div class="gallery-item">
-
-<img
-src="project-01.jpg"
-alt="Residential architecture"
->
-
-<span>
-01 / RESIDENCE
-</span>
-
-</div>
+        <p>
+            Point Architects is a design practice focused on creating
+            thoughtful architecture, interiors and planning solutions.
+            Our work balances contemporary design with the character
+            of its context.
+        </p>
 
 
+        <div class="people">
 
-<div class="gallery-item">
+            <div class="person">
 
-<img
-src="project-02.jpg"
-alt="Residential architecture"
->
+                <strong>
+                    TOUSIF SHAIKH
+                </strong>
 
-<span>
-02 / RESIDENCE
-</span>
+                <span>
+                    CO-FOUNDER • PRINCIPAL ARCHITECT
+                </span>
 
-</div>
-
-
-
-<div class="gallery-item">
-
-<img
-src="project-03.jpg"
-alt="Healthcare architecture"
->
-
-<span>
-03 / HEALTHCARE
-</span>
-
-</div>
+            </div>
 
 
+            <div class="person">
 
-<div class="gallery-item">
+                <strong>
+                    ZEESHAN CHISTEY
+                </strong>
 
-<img
-src="project-04.jpg"
-alt="Architecture detail"
->
+                <span>
+                    CO-FOUNDER • PRINCIPAL ARCHITECT
+                </span>
 
-<span>
-04 / DETAIL
-</span>
+            </div>
 
-</div>
+        </div>
 
-
-
-<div class="gallery-item">
-
-<img
-src="project-05.jpg"
-alt="Khan Manzil"
->
-
-<span>
-05 / KHAN MANZIL
-</span>
-
-</div>
-
-
-
-<div class="gallery-item">
-
-<img
-src="project-01.jpg"
-alt="Point Architects"
->
-
-<span>
-06 / POINT
-</span>
-
-</div>
-
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
+<!-- =======================================================
+     JOURNAL
+======================================================= -->
 
-<!-- ================= CONTACT ================= -->
+<section class="section journal">
 
-<section class="contact-section" id="contact">
+    <div class="section-heading-row">
 
-<div class="container contact-grid">
+        <div>
 
+            <div class="section-label">
+                Visual Journal
+            </div>
 
-<div class="contact-copy">
+            <h2 class="section-title">
+                Architecture in Detail
+            </h2>
 
-<div class="eyebrow">
-Start a Conversation
-</div>
+        </div>
 
+        <a href="#contact" class="text-link">
+            Follow Point →
+        </a>
 
-<h2 class="title">
-
-Have a space<br>
-in mind?
-
-</h2>
-
-
-<p>
-
-Tell us about your project, site, requirements and ideas.
-
-Replace the contact details with Point Architects'
-official information before publishing.
-
-</p>
-
-</div>
+    </div>
 
 
+    <div class="journal-grid">
 
-<div class="contact-box">
+        <div class="journal-card">
 
+            <img
+                src="images/project-01.jpg"
+                alt="Point Architects residence"
+                loading="lazy"
+            >
 
-<div class="contact-row">
+            <div class="journal-label">
+                01 / Residence
+            </div>
 
-<span>
-EMAIL
-</span>
-
-<strong><a href="mailto:pointarchitectsstudio@gmail.com">pointarchitectsstudio@gmail.com</a></strong>
-
-</div>
-
-
-
-<div class="contact-row">
-
-<span>
-PHONE / WHATSAPP
-</span>
-
-<strong><a href="tel:+917899694656">+91 7899694656</a><br><a href="tel:+919480941980">+91 9480941980</a></strong>
-
-</div>
+        </div>
 
 
+        <div class="journal-card">
 
-<div class="contact-row">
+            <img
+                src="images/project-02.jpg"
+                alt="Residential architecture"
+                loading="lazy"
+            >
 
-<span>
-INSTAGRAM
-</span>
+            <div class="journal-label">
+                02 / Residence
+            </div>
 
-<strong><a href="https://www.instagram.com/pointarchitects.studio/" target="_blank" rel="noopener">@pointarchitects.studo</a></strong>
-
-</div>
-
-
-
-<div class="contact-row">
-
-<span>
-LOCATION
-</span>
-
-<strong>
-<a href="https://www.google.com/maps/search/?api=1&query=Hagarga%20Rd%2C%20Mecca%20Colony%2C%20Kalaburagi%2C%20Karnataka%20585104%2C%20India" target="_blank" rel="noopener">Hagarga Rd, Mecca Colony, Kalaburagi, Karnataka 585104, India</a>
-</strong>
-
-</div>
+        </div>
 
 
+        <div class="journal-card">
 
-<div class="contact-note">
+            <img
+                src="images/project-03.jpg"
+                alt="Healthcare architecture"
+                loading="lazy"
+            >
 
-<a href="https://www.google.com/maps/search/?api=1&query=Hagarga%20Rd%2C%20Mecca%20Colony%2C%20Kalaburagi%2C%20Karnataka%20585104%2C%20India" target="_blank" rel="noopener">Hagarga Rd, Mecca Colony, Kalaburagi, Karnataka 585104, India</a>
+            <div class="journal-label">
+                03 / Healthcare
+            </div>
 
-</div>
+        </div>
 
 
-</div>
+        <div class="journal-card">
 
-</div>
+            <img
+                src="images/project-04.jpg"
+                alt="Architecture detail"
+                loading="lazy"
+            >
+
+            <div class="journal-label">
+                04 / Detail
+            </div>
+
+        </div>
+
+
+        <div class="journal-card">
+
+            <img
+                src="images/project-05.jpg"
+                alt="Khan Manzil"
+                loading="lazy"
+            >
+
+            <div class="journal-label">
+                05 / Khan Manzil
+            </div>
+
+        </div>
+
+
+        <div class="journal-card">
+
+            <img
+                src="images/project-01.jpg"
+                alt="Point Architects project"
+                loading="lazy"
+            >
+
+            <div class="journal-label">
+                06 / Point
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
+<!-- =======================================================
+     CONTACT
+======================================================= -->
 
-<!-- ================= FOOTER ================= -->
+<section class="section contact" id="contact">
+
+    <div>
+
+        <div class="section-label">
+            Start a Conversation
+        </div>
+
+        <h2 class="contact-title">
+            Have a space<br>
+            in mind?
+        </h2>
+
+        <p class="contact-description">
+            Tell us about your project, site, requirements and ideas.
+            We would be happy to discuss how Point Architects can
+            shape the next stage.
+        </p>
+
+    </div>
+
+
+    <div class="contact-info">
+
+        <!-- EMAIL -->
+
+        <div class="contact-row">
+
+            <div class="contact-label">
+                EMAIL
+            </div>
+
+            <div class="contact-value">
+                <a href="mailto:pointarchitectsstudio@gmail.com">
+                    pointarchitectsstudio@gmail.com
+                </a>
+            </div>
+
+        </div>
+
+
+        <!-- PHONE -->
+
+        <div class="contact-row">
+
+            <div class="contact-label">
+                PHONE / WHATSAPP
+            </div>
+
+            <div class="contact-value">
+
+                <a href="tel:+919789694658">
+                    +91 9789694658
+                </a>
+
+                <br>
+
+                <a href="tel:+919849491980">
+                    +91 9849491980
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- INSTAGRAM -->
+
+        <div class="contact-row">
+
+            <div class="contact-label">
+                INSTAGRAM
+            </div>
+
+            <div class="contact-value">
+
+                <a
+                    href="https://www.instagram.com/pointarchitects.studio/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    @pointarchitects.studio
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOCATION -->
+
+        <div class="contact-row">
+
+            <div class="contact-label">
+                LOCATION
+            </div>
+
+            <div class="contact-value">
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=Hagarga%20Rd%2C%20Mecca%20Colony%2C%20Kalaburagi%2C%20Karnataka%20585104%2C%20India"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Hagarga Rd, Mecca Colony,<br>
+                    Kalaburagi, Karnataka 585104, India →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- MAP LINK -->
+
+        <div style="margin-top:25px;">
+
+            <a
+                class="text-link"
+                href="https://www.google.com/maps/search/?api=1&query=Hagarga%20Rd%2C%20Mecca%20Colony%2C%20Kalaburagi%2C%20Karnataka%20585104%2C%20India"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Open Location in Google Maps →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
 
 <footer>
 
-<div class="container">
+    <div class="footer-top">
+
+        <div>
+
+            <div class="footer-brand">
+                POINT ARCHITECTS
+            </div>
+
+            <div class="footer-tagline">
+                Designed with purpose.
+            </div>
+
+        </div>
 
 
-<div class="footer-top">
+        <div class="footer-links">
+
+            <a href="#projects">Projects</a>
+            <a href="#studio">Studio</a>
+            <a href="#process">Process</a>
+            <a href="#contact">Contact</a>
+
+        </div>
+
+    </div>
 
 
-<div class="footer-brand">
+    <div class="footer-bottom">
 
-POINT ARCHITECTS
+        <div>
+            © 2026 Point Architects. All rights reserved.
+        </div>
 
-<small>
-ARCHITECTURE • INTERIORS • PLANNING
-</small>
+        <div>
+            Architecture • Interiors • Planning
+        </div>
 
-</div>
-
-
-<div class="footer-quote">
-
-Designed with purpose.
-
-</div>
-
-
-</div>
-
-
-
-<div class="footer-bottom">
-
-<span>
-© 2026 Point Architects. All rights reserved.
-</span>
-
-
-<a href="#home">
-↑ TOP
-</a>
-
-</div>
-
-
-</div>
+    </div>
 
 </footer>
 
 
+<!-- =======================================================
+     JAVASCRIPT
+======================================================= -->
 
 <script>
 
-const menu = document.querySelector('.menu');
+/* HEADER SCROLL */
 
-const nav = document.querySelector('.nav-links');
+const header = document.getElementById("header");
 
-menu.addEventListener('click', () => {
+window.addEventListener("scroll", () => {
 
-nav.classList.toggle('open');
+    if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
+
+});
+
+
+/* MOBILE MENU */
+
+const menuBtn = document.getElementById("menuBtn");
+const mobileNav = document.getElementById("mobileNav");
+
+menuBtn.addEventListener("click", () => {
+
+    mobileNav.classList.toggle("open");
 
 });
 
 
-nav.querySelectorAll('a').forEach(a => {
+/* CLOSE MOBILE MENU AFTER CLICK */
 
-a.addEventListener('click', () => {
+document.querySelectorAll(".mobile-nav a").forEach(link => {
 
-nav.classList.remove('open');
+    link.addEventListener("click", () => {
+
+        mobileNav.classList.remove("open");
+
+    });
 
 });
+
+
+/* ESCAPE KEY CLOSE */
+
+document.addEventListener("keydown", (event) => {
+
+    if (event.key === "Escape") {
+
+        mobileNav.classList.remove("open");
+
+    }
 
 });
 
 </script>
 
-
 </body>
 </html>
-h/?api=1&query=Hagarga%20Rd%2C%20Mecca%20Colony%2C%20Kalaburagi%2C%20Karnataka%20585104%2C%20India" target="_blank" rel="noopener">Hagarga Rd, Mecca Colony, Kalaburagi, Karnataka 585104, India</a>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-<div class="container">
-
-
-<div class="footer-top">
-
-
-<div class="footer-brand">
-
-POINT ARCHITECTS
-
-<small>
-ARCHITECTURE • INTERIORS • PLANNING
-</small>
-
-</div>
-
-
-<div class="footer-quote">
-
-Designed with purpose.
-
-</div>
-
-
-</div>
-
-
-
-<div class="footer-bottom">
-
-<span>
-© 2026 Point Architects. All
