@@ -105,7 +105,15 @@ section{
     border-radius:10px;
     display:grid;
     place-items:center;
-    color:var(--accent);
+    overflow:hidden;
+    background:#0d1914;
+}
+
+.logo-box img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    padding:5px;
 }
 
 .nav-links{
@@ -215,7 +223,7 @@ section{
     color:var(--accent);
 }
 
-/* HERO IMAGE */
+/* ================= HERO IMAGE ================= */
 
 .hero-image{
     position:relative;
@@ -230,7 +238,7 @@ section{
     width:100%;
     height:100%;
     object-fit:cover;
-    opacity:.72;
+    opacity:.78;
     transition:transform 1s ease;
 }
 
@@ -799,9 +807,7 @@ footer{
 </style>
 </head>
 
-
 <body>
-
 
 <!-- ================= NAVIGATION ================= -->
 
@@ -810,8 +816,13 @@ footer{
 <div class="nav-inner">
 
 <a href="#home" class="logo">
-<div class="logo-box">P</div>
+
+<div class="logo-box">
+<img src="point-logo.png" alt="Point Architects Logo">
+</div>
+
 POINT ARCHITECTS
+
 </a>
 
 <nav class="nav-links" id="navLinks">
@@ -874,12 +885,13 @@ Contact Us
 </div>
 
 
+<!-- YOUR OWN PROJECT PHOTO -->
+
 <div class="hero-image">
 
 <img
-src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=90"
-alt="Modern architecture and interior design"
-onerror="this.style.display='none';"
+src="project-01.jpg"
+alt="Point Architects Project"
 >
 
 <div class="hero-overlay"></div>
@@ -1180,12 +1192,13 @@ hospitals, interiors, renovations and turnkey construction projects.
 <div class="projects">
 
 
+<!-- PROJECT 01 -->
+
 <div class="project">
 
 <img
-src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=90"
-alt="Modern residential architecture"
-onerror="this.style.display='none';"
+src="project-01.jpg"
+alt="Point Architects Residential Project"
 >
 
 <div class="project-content">
@@ -1206,12 +1219,14 @@ practical planning and carefully selected materials.
 
 <div style="display:grid;gap:16px;">
 
+
+<!-- PROJECT 02 -->
+
 <div class="project small">
 
 <img
-src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=90"
-alt="Commercial architecture"
-onerror="this.style.display='none';"
+src="project-02.jpg"
+alt="Point Architects Project 2"
 >
 
 <div class="project-content">
@@ -1220,19 +1235,22 @@ onerror="this.style.display='none';"
 
 <h3>Commercial Spaces</h3>
 
-<p>Functional environments designed for people and business.</p>
+<p>
+Functional environments designed for people and business.
+</p>
 
 </div>
 
 </div>
 
+
+<!-- PROJECT 03 -->
 
 <div class="project small">
 
 <img
-src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=90"
-alt="Architectural building"
-onerror="this.style.display='none';"
+src="project-03.jpg"
+alt="Point Architects Project 3"
 >
 
 <div class="project-content">
@@ -1241,7 +1259,9 @@ onerror="this.style.display='none';"
 
 <h3>Built Environment</h3>
 
-<p>Contemporary architectural solutions with practical planning.</p>
+<p>
+Contemporary architectural solutions with practical planning.
+</p>
 
 </div>
 
@@ -1379,72 +1399,45 @@ materials and spatial character.
 <div class="gallery">
 
 
+<!-- YOUR PHOTO 01 -->
+
 <div class="gallery-item">
 
 <img
-src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=90"
-alt="Modern interior"
-onerror="this.style.display='none';"
+src="project-01.jpg"
+alt="Point Architects Project 1"
 >
 
 <div class="gallery-name">
-Contemporary Interior
+Residential Architecture
 </div>
 
 </div>
 
+
+<!-- YOUR PHOTO 02 -->
 
 <div class="gallery-item">
 
 <img
-src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=90"
-alt="Luxury interior"
-onerror="this.style.display='none';"
+src="project-02.jpg"
+alt="Point Architects Project 2"
 >
 
 <div class="gallery-name">
-Interior Design
+Commercial Architecture
 </div>
 
 </div>
 
+
+<!-- YOUR PHOTO 03 -->
 
 <div class="gallery-item">
 
 <img
-src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=90"
-alt="Modern living room"
-onerror="this.style.display='none';"
->
-
-<div class="gallery-name">
-Living Spaces
-</div>
-
-</div>
-
-
-<div class="gallery-item">
-
-<img
-src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1200&q=90"
-alt="Modern architecture"
-onerror="this.style.display='none';"
->
-
-<div class="gallery-name">
-Material & Detail
-</div>
-
-</div>
-
-
-<div class="gallery-item">
-
-<img
-src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=90"
-alt="Architectural interior"
-onerror="this.style.display='none';"
+src="project-03.jpg"
+alt="Point Architects Project 3"
 >
 
 <div class="gallery-name">
@@ -1454,16 +1447,49 @@ Architectural Character
 </div>
 
 
+<!-- YOUR PHOTO 04 -->
+
 <div class="gallery-item">
 
 <img
-src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=90"
-alt="Modern house"
-onerror="this.style.display='none';"
+src="project-04.jpg"
+alt="Point Architects Project 4"
 >
 
 <div class="gallery-name">
-Residential Architecture
+Design & Detail
+</div>
+
+</div>
+
+
+<!-- YOUR PHOTO 05 -->
+
+<div class="gallery-item">
+
+<img
+src="project-05.jpg"
+alt="Point Architects Project 5"
+>
+
+<div class="gallery-name">
+Project Showcase
+</div>
+
+</div>
+
+
+<!-- PHOTO 01 AGAIN FOR SIXTH CARD -->
+
+<div class="gallery-item">
+
+<img
+src="project-01.jpg"
+alt="Point Architects Residential Project"
+>
+
+<div class="gallery-name">
+Contemporary Spaces
 </div>
 
 </div>
@@ -1637,18 +1663,25 @@ Instagram →
 <div class="container footer">
 
 <div>
+
 <strong>POINT ARCHITECTS</strong><br>
+
 Architecture • Interiors • Construction
+
 </div>
 
 <div>
+
 © 2026 Point Architects. All Rights Reserved.
+
 </div>
 
 </div>
 
 </footer>
 
+
+<!-- ================= JAVASCRIPT ================= -->
 
 <script>
 
@@ -1669,7 +1702,6 @@ document.querySelectorAll(".nav-links a").forEach(function(link){
 });
 
 </script>
-
 
 </body>
 </html>
