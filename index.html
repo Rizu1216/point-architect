@@ -100,43 +100,34 @@ button {
     padding-bottom: 15px;
 }
 
-/* LOGO */
+/* LOGO IMAGE */
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 14px;
 }
 
-.logo-box {
-    width: 48px;
-    height: 48px;
-
-    border: 1px solid rgba(255,255,255,.8);
-
-    display: grid;
-    place-items: center;
-
-    font-family: "Playfair Display", serif;
-    font-size: 28px;
-}
-
-.logo-text strong {
+.logo-image {
+    width: 190px;
+    height: auto;
+    max-height: 58px;
+    object-fit: contain;
     display: block;
-
-    font-size: 15px;
-    letter-spacing: 6px;
-    font-weight: 400;
+    filter: invert(1);
 }
 
-.logo-text span {
-    display: block;
+@media (max-width: 600px) {
+    .logo-image {
+        width: 175px;
+        max-height: 52px;
+    }
+}
 
-    margin-top: 5px;
-
-    font-size: 8px;
-    letter-spacing: 3px;
-    opacity: .7;
+@media (max-width: 380px) {
+    .logo-image {
+        width: 155px;
+        max-height: 48px;
+    }
 }
 
 /* DESKTOP NAV */
@@ -890,22 +881,6 @@ footer {
         padding: 13px 20px;
     }
 
-    .logo-box {
-        width: 40px;
-        height: 40px;
-        font-size: 23px;
-    }
-
-    .logo-text strong {
-        font-size: 12px;
-        letter-spacing: 4px;
-    }
-
-    .logo-text span {
-        font-size: 7px;
-        letter-spacing: 2px;
-    }
-
     .hero {
         min-height: 100svh;
 
@@ -1067,10 +1042,6 @@ footer {
 
 @media (max-width: 380px) {
 
-    .logo-text strong {
-        font-size: 10px;
-    }
-
     .hero h1 {
         font-size: 40px;
     }
@@ -1093,15 +1064,12 @@ footer {
 
 <header class="site-header" id="header">
 
-    <a href="#top" class="logo">
-
-        <div class="logo-box">P</div>
-
-        <div class="logo-text">
-            <strong>POINT ARCHITECTS</strong>
-            <span>ARCHITECTURE • INTERIORS • PLANNING</span>
-        </div>
-
+    <a href="#top" class="logo" aria-label="Point Architects Home">
+        <img
+            src="point-logo.png"
+            alt="Point Architects"
+            class="logo-image"
+        >
     </a>
 
 
