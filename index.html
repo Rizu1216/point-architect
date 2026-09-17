@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Point Architects | Architecture • Interiors • Planning</title>
+<title>Point Architects | Architecture • Interiors • Construction</title>
 
 <meta name="description" content="Point Architects — Architecture, Interior Design, Construction, Planning and Turnkey Projects in Gulbarga Karnataka India.">
 
@@ -13,25 +13,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
     --bg:#07100d;
     --bg2:#0b1713;
     --card:#101d18;
-    --card2:#13231d;
-    --text:#f3f6f2;
-    --muted:#aab8b0;
-    --accent:#d6ff63;
-    --accent2:#9eea38;
+    --text:#f4f7f3;
+    --muted:#aab7b0;
+    --accent:#d7ff55;
     --line:rgba(255,255,255,.10);
-    --shadow:0 20px 60px rgba(0,0,0,.35);
-    --radius:24px;
 }
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    scroll-behavior:smooth;
 }
 
 html{
@@ -39,35 +35,35 @@ html{
 }
 
 body{
-    font-family:Inter,Arial,sans-serif;
     background:
-        radial-gradient(circle at 10% 10%,rgba(214,255,99,.08),transparent 30%),
-        radial-gradient(circle at 90% 30%,rgba(158,234,56,.05),transparent 28%),
-        var(--bg);
+    radial-gradient(circle at 10% 10%,rgba(215,255,85,.07),transparent 30%),
+    radial-gradient(circle at 90% 40%,rgba(215,255,85,.04),transparent 30%),
+    var(--bg);
     color:var(--text);
+    font-family:Inter,Arial,sans-serif;
     line-height:1.7;
     overflow-x:hidden;
-    cursor:auto !important;
+    cursor:auto!important;
 }
 
 a{
     color:inherit;
     text-decoration:none;
+    cursor:pointer!important;
 }
 
 img{
-    max-width:100%;
     display:block;
-}
-
-button,
-a{
-    cursor:pointer !important;
+    max-width:100%;
 }
 
 .container{
     width:min(1180px,92%);
     margin:auto;
+}
+
+section{
+    padding:110px 0;
 }
 
 /* ================= NAVBAR ================= */
@@ -77,55 +73,49 @@ a{
     top:0;
     left:0;
     right:0;
-    z-index:1000;
     height:78px;
-    display:flex;
-    align-items:center;
-    background:rgba(7,16,13,.78);
+    z-index:9999;
+    background:rgba(7,16,13,.88);
     backdrop-filter:blur(18px);
     border-bottom:1px solid var(--line);
 }
 
 .nav-inner{
     width:min(1180px,92%);
+    height:100%;
     margin:auto;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:20px;
 }
 
 .logo{
     display:flex;
     align-items:center;
-    gap:12px;
-    font-family:"Space Grotesk",sans-serif;
+    gap:10px;
+    font-family:"Space Grotesk";
     font-weight:700;
-    letter-spacing:-.5px;
-    font-size:21px;
+    font-size:16px;
 }
 
-.logo-mark{
+.logo-box{
     width:38px;
     height:38px;
-    border:1px solid rgba(214,255,99,.65);
+    border:1px solid rgba(215,255,85,.55);
+    border-radius:10px;
     display:grid;
     place-items:center;
-    border-radius:11px;
     color:var(--accent);
-    font-weight:700;
 }
 
 .nav-links{
     display:flex;
     gap:25px;
-    align-items:center;
 }
 
 .nav-links a{
-    color:#c7d0cb;
-    font-size:13px;
-    font-weight:500;
+    font-size:12px;
+    color:#c5cec9;
     transition:.3s;
 }
 
@@ -133,99 +123,91 @@ a{
     color:var(--accent);
 }
 
-.nav-btn{
-    border:1px solid rgba(214,255,99,.45);
-    color:var(--accent);
+.talk-btn{
     padding:10px 16px;
+    border:1px solid rgba(215,255,85,.5);
     border-radius:30px;
-    font-size:12px;
+    color:var(--accent);
+    font-size:11px;
 }
 
-.menu-btn{
+.menu{
     display:none;
     background:none;
-    border:1px solid var(--line);
     color:white;
-    padding:8px 12px;
-    border-radius:10px;
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:7px 10px;
 }
 
 /* ================= HERO ================= */
 
 .hero{
     min-height:100vh;
-    padding-top:120px;
+    padding-top:130px;
     display:flex;
     align-items:center;
-    position:relative;
 }
 
 .hero-grid{
     display:grid;
-    grid-template-columns:1.05fr .95fr;
-    gap:70px;
+    grid-template-columns:1fr 1fr;
+    gap:65px;
     align-items:center;
 }
 
-.eyebrow{
+.small-title{
     color:var(--accent);
-    font-size:12px;
-    text-transform:uppercase;
+    font-size:10px;
     letter-spacing:3px;
+    font-weight:700;
     margin-bottom:22px;
-    font-weight:600;
 }
 
 .hero h1{
-    font-family:"Space Grotesk",sans-serif;
-    font-size:clamp(48px,7vw,92px);
+    font-family:"Space Grotesk";
+    font-size:clamp(50px,7vw,90px);
     line-height:.98;
     letter-spacing:-5px;
-    margin-bottom:28px;
+    margin-bottom:27px;
 }
 
 .hero h1 span{
     color:var(--accent);
 }
 
-.hero p{
+.hero-text{
     color:var(--muted);
-    max-width:650px;
-    font-size:17px;
-    line-height:1.8;
+    font-size:15px;
+    max-width:590px;
 }
 
-.hero-buttons{
+.buttons{
     display:flex;
-    gap:14px;
-    margin-top:34px;
+    gap:12px;
+    margin-top:30px;
     flex-wrap:wrap;
 }
 
 .btn{
-    padding:14px 22px;
-    border-radius:40px;
-    font-size:13px;
+    padding:14px 21px;
+    border-radius:30px;
+    font-size:12px;
     font-weight:600;
     transition:.3s;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
 }
 
 .btn-primary{
     background:var(--accent);
-    color:#11180e;
+    color:#11170b;
 }
 
 .btn-primary:hover{
     transform:translateY(-3px);
-    box-shadow:0 10px 30px rgba(214,255,99,.18);
 }
 
 .btn-outline{
     border:1px solid var(--line);
-    color:white;
 }
 
 .btn-outline:hover{
@@ -233,127 +215,107 @@ a{
     color:var(--accent);
 }
 
-.hero-visual{
-    position:relative;
-}
+/* HERO IMAGE */
 
-.hero-card{
-    background:linear-gradient(145deg,#15241e,#0b1511);
-    border:1px solid var(--line);
-    border-radius:32px;
-    min-height:540px;
+.hero-image{
     position:relative;
+    height:560px;
+    border-radius:30px;
     overflow:hidden;
-    box-shadow:var(--shadow);
-}
-
-.hero-card:before{
-    content:"";
-    position:absolute;
-    width:300px;
-    height:300px;
-    border-radius:50%;
-    background:rgba(214,255,99,.08);
-    filter:blur(40px);
-    top:-100px;
-    right:-100px;
-}
-
-.architecture-shape{
-    position:absolute;
-    left:13%;
-    right:13%;
-    top:17%;
-    bottom:14%;
-    border:1px solid rgba(214,255,99,.25);
-    transform:perspective(700px) rotateX(7deg) rotateY(-10deg);
-}
-
-.architecture-shape:before,
-.architecture-shape:after{
-    content:"";
-    position:absolute;
-    border:1px solid rgba(255,255,255,.13);
-}
-
-.architecture-shape:before{
-    inset:12%;
-}
-
-.architecture-shape:after{
-    left:25%;
-    right:25%;
-    top:0;
-    bottom:0;
-    border-top:0;
-    border-bottom:0;
-}
-
-.hero-floating{
-    position:absolute;
-    background:rgba(10,20,16,.86);
     border:1px solid var(--line);
-    backdrop-filter:blur(15px);
+    background:#14221b;
+}
+
+.hero-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:.72;
+    transition:transform 1s ease;
+}
+
+.hero-image:hover img{
+    transform:scale(1.05);
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(to top,rgba(3,10,7,.9),transparent 60%),
+    linear-gradient(to right,rgba(3,10,7,.3),transparent);
+}
+
+.hero-tag{
+    position:absolute;
+    right:20px;
+    top:50px;
     padding:18px;
-    border-radius:18px;
-    box-shadow:var(--shadow);
+    min-width:115px;
+    border:1px solid var(--line);
+    border-radius:16px;
+    background:rgba(8,18,13,.82);
+    backdrop-filter:blur(15px);
 }
 
-.float-one{
-    left:-30px;
-    bottom:55px;
-}
-
-.float-two{
-    right:-20px;
-    top:70px;
-}
-
-.hero-floating strong{
+.hero-tag strong{
     display:block;
     color:var(--accent);
-    font-size:25px;
     font-family:"Space Grotesk";
+    font-size:25px;
 }
 
-.hero-floating small{
+.hero-tag small{
     color:var(--muted);
-    font-size:11px;
+    font-size:9px;
 }
 
-/* ================= SECTIONS ================= */
-
-section{
-    padding:110px 0;
-    position:relative;
+.hero-bottom{
+    position:absolute;
+    bottom:25px;
+    left:25px;
+    right:25px;
 }
+
+.hero-bottom span{
+    color:var(--accent);
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+.hero-bottom h3{
+    font-family:"Space Grotesk";
+    font-size:28px;
+}
+
+/* ================= SECTION HEADER ================= */
 
 .section-head{
     display:flex;
     justify-content:space-between;
-    gap:30px;
     align-items:end;
+    gap:30px;
     margin-bottom:55px;
 }
 
 .section-number{
     color:var(--accent);
-    font-size:12px;
+    font-size:10px;
     letter-spacing:2px;
-    margin-bottom:12px;
+    margin-bottom:10px;
 }
 
 .section-title{
     font-family:"Space Grotesk";
-    font-size:clamp(35px,5vw,58px);
+    font-size:clamp(38px,5vw,58px);
     line-height:1;
-    letter-spacing:-2px;
+    letter-spacing:-3px;
 }
 
 .section-description{
-    max-width:480px;
+    max-width:460px;
     color:var(--muted);
-    font-size:14px;
+    font-size:13px;
 }
 
 /* ================= ABOUT ================= */
@@ -365,9 +327,8 @@ section{
 }
 
 .about-main{
-    font-size:22px;
-    line-height:1.55;
-    color:#e3e9e4;
+    font-size:21px;
+    line-height:1.6;
 }
 
 .about-main span{
@@ -376,268 +337,235 @@ section{
 
 .about-text{
     color:var(--muted);
-    font-size:14px;
-    margin-top:25px;
+    font-size:13px;
+    margin-top:22px;
 }
 
 .about-boxes{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:15px;
+    gap:14px;
 }
 
 .about-box{
-    padding:28px;
+    min-height:145px;
+    padding:25px;
     border:1px solid var(--line);
-    background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.015));
-    border-radius:20px;
+    border-radius:19px;
+    background:linear-gradient(145deg,#122019,#0b1611);
 }
 
-.about-box h3{
-    font-family:"Space Grotesk";
+.about-box strong{
     color:var(--accent);
-    font-size:30px;
-    margin-bottom:5px;
+    font-family:"Space Grotesk";
+    font-size:24px;
 }
 
 .about-box p{
     color:var(--muted);
-    font-size:12px;
+    font-size:11px;
+    margin-top:8px;
 }
 
 /* ================= SERVICES ================= */
 
-.services-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
-}
-
-.service-card{
-    padding:32px;
-    min-height:260px;
-    border:1px solid var(--line);
-    border-radius:22px;
-    background:linear-gradient(145deg,#101d18,#0b1511);
-    transition:.35s;
-}
-
-.service-card:hover{
-    transform:translateY(-7px);
-    border-color:rgba(214,255,99,.35);
-}
-
-.service-number{
-    color:var(--accent);
-    font-size:12px;
-    margin-bottom:30px;
-}
-
-.service-card h3{
-    font-family:"Space Grotesk";
-    font-size:23px;
-    margin-bottom:14px;
-}
-
-.service-card p{
-    color:var(--muted);
-    font-size:13px;
-}
-
-.service-list{
-    margin-top:20px;
-    padding-left:17px;
-    color:#aebbb3;
-    font-size:12px;
-}
-
-.service-list li{
-    margin-bottom:5px;
-}
-
-/* ================= PROJECTS ================= */
-
-.project-grid{
-    display:grid;
-    grid-template-columns:1.3fr .7fr;
-    gap:18px;
-}
-
-.project-card{
-    min-height:380px;
-    border-radius:24px;
-    overflow:hidden;
-    border:1px solid var(--line);
-    background:#101a16;
-    position:relative;
-}
-
-.project-card.large{
-    min-height:560px;
-}
-
-.project-bg{
-    position:absolute;
-    inset:0;
-    background:
-        linear-gradient(to top,rgba(0,0,0,.8),rgba(0,0,0,.05)),
-        linear-gradient(135deg,#263b32,#101914 45%,#1d2b25);
-}
-
-.project-bg.two{
-    background:
-        linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.05)),
-        linear-gradient(135deg,#4b5146,#17221c 45%,#26332b);
-}
-
-.project-bg.three{
-    background:
-        linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.05)),
-        linear-gradient(135deg,#35453b,#111a16 45%,#506052);
-}
-
-.project-lines{
-    position:absolute;
-    inset:15%;
-    border:1px solid rgba(214,255,99,.22);
-    transform:skewY(-4deg);
-}
-
-.project-info{
-    position:absolute;
-    left:28px;
-    right:28px;
-    bottom:25px;
-}
-
-.project-info span{
-    color:var(--accent);
-    font-size:11px;
-    text-transform:uppercase;
-    letter-spacing:2px;
-}
-
-.project-info h3{
-    font-family:"Space Grotesk";
-    font-size:30px;
-    margin-top:7px;
-}
-
-.project-info p{
-    color:#b7c0ba;
-    font-size:12px;
-}
-
-/* ================= PROJECT DETAILS ================= */
-
-.project-types{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-}
-
-.project-type{
-    padding:28px 20px;
-    border-right:1px solid var(--line);
-}
-
-.project-type:last-child{
-    border-right:0;
-}
-
-.project-type strong{
-    display:block;
-    font-family:"Space Grotesk";
-    font-size:18px;
-    margin-bottom:8px;
-}
-
-.project-type p{
-    color:var(--muted);
-    font-size:12px;
-}
-
-/* ================= TEAM ================= */
-
-.team-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-}
-
-.team-card{
-    border:1px solid var(--line);
-    border-radius:24px;
-    padding:35px;
-    background:linear-gradient(145deg,#101d18,#0a1410);
-}
-
-.team-avatar{
-    width:70px;
-    height:70px;
-    border-radius:50%;
-    border:1px solid rgba(214,255,99,.35);
-    display:grid;
-    place-items:center;
-    color:var(--accent);
-    font-family:"Space Grotesk";
-    font-size:20px;
-    margin-bottom:25px;
-}
-
-.team-card h3{
-    font-family:"Space Grotesk";
-    font-size:25px;
-}
-
-.team-role{
-    color:var(--accent);
-    font-size:12px;
-    margin:5px 0 18px;
-}
-
-.team-card p{
-    color:var(--muted);
-    font-size:13px;
-}
-
-/* ================= GALLERY ================= */
-
-.gallery-grid{
+.services{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:16px;
 }
 
-.gallery-item{
-    min-height:260px;
-    border-radius:20px;
-    overflow:hidden;
-    position:relative;
+.service{
+    padding:30px;
+    min-height:270px;
     border:1px solid var(--line);
-    background:#15221c;
+    border-radius:20px;
+    background:linear-gradient(145deg,#111e18,#0b1511);
+    transition:.3s;
+}
+
+.service:hover{
+    transform:translateY(-6px);
+    border-color:rgba(215,255,85,.35);
+}
+
+.service-number{
+    color:var(--accent);
+    font-size:10px;
+    margin-bottom:27px;
+}
+
+.service h3{
+    font-family:"Space Grotesk";
+    font-size:21px;
+    margin-bottom:12px;
+}
+
+.service p{
+    color:var(--muted);
+    font-size:12px;
+}
+
+.service ul{
+    padding-left:17px;
+    margin-top:15px;
+    color:#aebbb4;
+    font-size:11px;
+}
+
+.service li{
+    margin:3px 0;
+}
+
+/* ================= PROJECTS ================= */
+
+.projects{
+    display:grid;
+    grid-template-columns:1.25fr .75fr;
+    gap:16px;
+}
+
+.project{
+    position:relative;
+    min-height:550px;
+    overflow:hidden;
+    border-radius:24px;
+    border:1px solid var(--line);
+    background:#132019;
+}
+
+.project.small{
+    min-height:267px;
+}
+
+.project img{
+    width:100%;
+    height:100%;
+    position:absolute;
+    inset:0;
+    object-fit:cover;
+    transition:.7s;
+}
+
+.project:hover img{
+    transform:scale(1.06);
+}
+
+.project:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(transparent 35%,rgba(0,0,0,.88));
+}
+
+.project-content{
+    position:absolute;
+    z-index:2;
+    left:25px;
+    right:25px;
+    bottom:23px;
+}
+
+.project-content span{
+    color:var(--accent);
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+.project-content h3{
+    font-family:"Space Grotesk";
+    font-size:27px;
+}
+
+.project-content p{
+    color:#c0c8c3;
+    font-size:11px;
+}
+
+/* ================= TEAM ================= */
+
+.team{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.team-card{
+    padding:35px;
+    border:1px solid var(--line);
+    border-radius:23px;
+    background:linear-gradient(145deg,#111e18,#0a1510);
+}
+
+.initial{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    border:1px solid rgba(215,255,85,.4);
+    display:grid;
+    place-items:center;
+    color:var(--accent);
+    font-family:"Space Grotesk";
+    font-size:19px;
+    margin-bottom:25px;
+}
+
+.team-card h3{
+    font-family:"Space Grotesk";
+    font-size:23px;
+}
+
+.role{
+    color:var(--accent);
+    font-size:11px;
+    margin:4px 0 17px;
+}
+
+.team-card p{
+    color:var(--muted);
+    font-size:12px;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.gallery-item{
+    height:280px;
+    position:relative;
+    overflow:hidden;
+    border-radius:20px;
+    border:1px solid var(--line);
+    background:#14211b;
 }
 
 .gallery-item img{
     width:100%;
     height:100%;
-    min-height:260px;
     object-fit:cover;
     transition:.6s;
 }
 
 .gallery-item:hover img{
-    transform:scale(1.06);
+    transform:scale(1.07);
 }
 
-.gallery-caption{
+.gallery-item:after{
+    content:"";
     position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-    padding:35px 18px 16px;
-    background:linear-gradient(transparent,rgba(0,0,0,.8));
+    inset:0;
+    background:linear-gradient(transparent 55%,rgba(0,0,0,.8));
+}
+
+.gallery-name{
+    position:absolute;
+    z-index:2;
+    left:18px;
+    bottom:15px;
     font-size:12px;
     font-weight:600;
 }
@@ -647,24 +575,24 @@ section{
 .contact-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:20px;
+    gap:18px;
 }
 
 .contact-card{
+    padding:35px;
     border:1px solid var(--line);
-    border-radius:24px;
-    padding:38px;
-    background:linear-gradient(145deg,#101d18,#0b1511);
+    border-radius:23px;
+    background:#0d1914;
 }
 
 .contact-card h3{
     font-family:"Space Grotesk";
-    font-size:25px;
+    font-size:26px;
     margin-bottom:20px;
 }
 
 .contact-row{
-    padding:17px 0;
+    padding:15px 0;
     border-bottom:1px solid var(--line);
 }
 
@@ -672,32 +600,32 @@ section{
     border-bottom:0;
 }
 
-.contact-label{
+.label{
     display:block;
-    color:#77857d;
-    font-size:10px;
+    color:#75827b;
+    font-size:9px;
     text-transform:uppercase;
     letter-spacing:2px;
-    margin-bottom:4px;
 }
 
-.contact-value{
-    color:#e8eee9;
-    font-size:14px;
+.value{
+    color:#e6ece8;
+    font-size:13px;
 }
 
-.contact-value:hover{
+.value:hover{
     color:var(--accent);
 }
 
-.map-box{
+.map{
     min-height:430px;
-    border-radius:24px;
+    border-radius:23px;
     border:1px solid var(--line);
     background:
-        linear-gradient(rgba(7,16,13,.75),rgba(7,16,13,.88)),
-        repeating-linear-gradient(45deg,transparent 0 25px,rgba(214,255,99,.06) 26px 27px),
-        #14221c;
+    linear-gradient(rgba(6,15,11,.82),rgba(6,15,11,.9)),
+    repeating-linear-gradient(45deg,
+    transparent 0 25px,
+    rgba(215,255,85,.05) 26px 27px);
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -706,10 +634,10 @@ section{
     padding:30px;
 }
 
-.map-icon{
-    width:80px;
-    height:80px;
-    border:1px solid rgba(214,255,99,.35);
+.map-pin{
+    width:75px;
+    height:75px;
+    border:1px solid rgba(215,255,85,.4);
     border-radius:50%;
     display:grid;
     place-items:center;
@@ -718,16 +646,16 @@ section{
     margin-bottom:20px;
 }
 
-.map-box h3{
+.map h3{
     font-family:"Space Grotesk";
-    font-size:28px;
+    font-size:27px;
 }
 
-.map-box p{
+.map p{
     color:var(--muted);
-    font-size:13px;
-    max-width:450px;
-    margin:12px auto 22px;
+    font-size:12px;
+    max-width:400px;
+    margin:10px 0 20px;
 }
 
 .contact-buttons{
@@ -737,60 +665,22 @@ section{
     justify-content:center;
 }
 
-/* ================= QR ================= */
-
-.qr-section{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:18px;
-    margin-top:20px;
-}
-
-.qr-card{
-    border:1px solid var(--line);
-    border-radius:22px;
-    padding:25px;
-    display:flex;
-    align-items:center;
-    gap:20px;
-    background:#0d1914;
-}
-
-.qr-card img{
-    width:100px;
-    height:100px;
-    background:white;
-    padding:6px;
-    border-radius:10px;
-}
-
-.qr-card h4{
-    font-family:"Space Grotesk";
-    margin-bottom:5px;
-}
-
-.qr-card p{
-    color:var(--muted);
-    font-size:11px;
-}
-
 /* ================= FOOTER ================= */
 
 footer{
-    border-top:1px solid var(--line);
     padding:35px 0;
-    color:#829089;
-    font-size:12px;
+    border-top:1px solid var(--line);
+    color:#7d8a83;
+    font-size:11px;
 }
 
-.footer-inner{
+.footer{
     display:flex;
     justify-content:space-between;
     gap:20px;
-    flex-wrap:wrap;
 }
 
-.footer-brand{
+.footer strong{
     color:white;
     font-family:"Space Grotesk";
 }
@@ -800,29 +690,28 @@ footer{
 @media(max-width:900px){
 
     .nav-links{
+        display:none;
         position:absolute;
         top:78px;
         left:4%;
         right:4%;
-        background:#0c1813;
-        border:1px solid var(--line);
-        border-radius:18px;
         padding:20px;
-        display:none;
+        background:#0b1712;
+        border:1px solid var(--line);
+        border-radius:17px;
         flex-direction:column;
-        align-items:flex-start;
     }
 
     .nav-links.active{
         display:flex;
     }
 
-    .menu-btn{
-        display:block;
+    .talk-btn{
+        display:none;
     }
 
-    .nav-btn{
-        display:none;
+    .menu{
+        display:block;
     }
 
     .hero-grid,
@@ -831,52 +720,32 @@ footer{
         grid-template-columns:1fr;
     }
 
-    .hero{
-        padding-top:120px;
+    .hero-image{
+        height:450px;
     }
 
-    .hero h1{
-        letter-spacing:-3px;
-    }
-
-    .hero-card{
-        min-height:420px;
-    }
-
-    .services-grid{
+    .services{
         grid-template-columns:1fr 1fr;
     }
 
-    .project-grid{
+    .projects{
         grid-template-columns:1fr;
     }
 
-    .project-card.large{
-        min-height:420px;
+    .project{
+        min-height:430px;
     }
 
-    .project-types{
+    .project.small{
+        min-height:350px;
+    }
+
+    .team{
+        grid-template-columns:1fr;
+    }
+
+    .gallery{
         grid-template-columns:1fr 1fr;
-    }
-
-    .project-type:nth-child(2){
-        border-right:0;
-    }
-
-    .project-type{
-        border-bottom:1px solid var(--line);
-    }
-
-    .team-grid{
-        grid-template-columns:1fr;
-    }
-
-    .gallery-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .qr-section{
-        grid-template-columns:1fr;
     }
 }
 
@@ -886,48 +755,17 @@ footer{
         padding:80px 0;
     }
 
+    .hero{
+        padding-top:115px;
+    }
+
     .hero h1{
-        font-size:48px;
+        font-size:49px;
+        letter-spacing:-3px;
     }
 
-    .hero p{
-        font-size:14px;
-    }
-
-    .hero-buttons{
-        flex-direction:column;
-        align-items:stretch;
-    }
-
-    .btn{
-        width:100%;
-    }
-
-    .hero-card{
-        min-height:350px;
-    }
-
-    .float-one{
-        left:10px;
-        bottom:20px;
-    }
-
-    .float-two{
-        right:10px;
-        top:20px;
-    }
-
-    .services-grid,
-    .gallery-grid{
-        grid-template-columns:1fr;
-    }
-
-    .project-types{
-        grid-template-columns:1fr;
-    }
-
-    .project-type{
-        border-right:0;
+    .hero-image{
+        height:390px;
     }
 
     .section-head{
@@ -935,108 +773,130 @@ footer{
         align-items:flex-start;
     }
 
+    .services,
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
     .about-boxes{
         grid-template-columns:1fr;
     }
 
-    .qr-card{
+    .buttons{
         flex-direction:column;
-        align-items:flex-start;
+    }
+
+    .btn{
+        text-align:center;
+        width:100%;
+    }
+
+    .footer{
+        flex-direction:column;
     }
 }
+
 </style>
 </head>
 
+
 <body>
+
 
 <!-- ================= NAVIGATION ================= -->
 
 <header class="navbar">
-    <div class="nav-inner">
 
-        <a href="#home" class="logo">
-            <div class="logo-mark">P</div>
-            <span>POINT ARCHITECTS</span>
-        </a>
+<div class="nav-inner">
 
-        <nav class="nav-links" id="navLinks">
-            <a href="#about">About Us</a>
-            <a href="#services">Services</a>
-            <a href="#projects">Projects</a>
-            <a href="#team">Our Team</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#contact">Contact Us</a>
-        </nav>
+<a href="#home" class="logo">
+<div class="logo-box">P</div>
+POINT ARCHITECTS
+</a>
 
-        <a class="nav-btn" href="#contact">Let's Talk</a>
+<nav class="nav-links" id="navLinks">
 
-        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+<a href="#about">About Us</a>
+<a href="#services">Services</a>
+<a href="#projects">Projects</a>
+<a href="#team">Our Team</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact Us</a>
 
-    </div>
+</nav>
+
+<a href="#contact" class="talk-btn">Let's Talk</a>
+
+<button class="menu" onclick="toggleMenu()">☰</button>
+
+</div>
+
 </header>
 
 
 <!-- ================= HERO ================= -->
 
-<main id="home">
+<section class="hero" id="home">
 
-<section class="hero">
+<div class="container hero-grid">
 
-    <div class="container hero-grid">
+<div>
 
-        <div>
+<div class="small-title">
+ARCHITECTURE • INTERIORS • CONSTRUCTION
+</div>
 
-            <div class="eyebrow">
-                Architecture • Interiors • Construction
-            </div>
+<h1>
+Designing<br>
+spaces with<br>
+<span>purpose.</span>
+</h1>
 
-            <h1>
-                Designing<br>
-                spaces with<br>
-                <span>purpose.</span>
-            </h1>
+<p class="hero-text">
+Point Architects is an architecture, interior design and construction
+practice based in Gulbarga Karnataka India. We create thoughtful,
+functional and contemporary spaces with strong attention to detail,
+materials, execution and the people who use them.
+</p>
 
-            <p>
-                Point Architects is an architecture, interior design and construction
-                practice based in Gulbarga Karnataka India. We create thoughtful,
-                functional and contemporary spaces with strong attention to detail,
-                materials, execution and the people who use them.
-            </p>
+<div class="buttons">
 
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">
-                    Explore Projects →
-                </a>
+<a href="#projects" class="btn btn-primary">
+Explore Projects →
+</a>
 
-                <a href="#contact" class="btn btn-outline">
-                    Contact Us
-                </a>
-            </div>
+<a href="#contact" class="btn btn-outline">
+Contact Us
+</a>
 
-        </div>
+</div>
+
+</div>
 
 
-        <div class="hero-visual">
+<div class="hero-image">
 
-            <div class="hero-card">
+<img
+src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=90"
+alt="Modern architecture and interior design"
+onerror="this.style.display='none';"
+>
 
-                <div class="architecture-shape"></div>
+<div class="hero-overlay"></div>
 
-                <div class="hero-floating float-one">
-                    <strong>01</strong>
-                    <small>Design with purpose</small>
-                </div>
+<div class="hero-tag">
+<strong>360°</strong>
+<small>From concept to execution</small>
+</div>
 
-                <div class="hero-floating float-two">
-                    <strong>360°</strong>
-                    <small>From concept to execution</small>
-                </div>
+<div class="hero-bottom">
+<span>POINT ARCHITECTS</span>
+<h3>Architecture with character.</h3>
+</div>
 
-            </div>
+</div>
 
-        </div>
-
-    </div>
+</div>
 
 </section>
 
@@ -1045,78 +905,84 @@ footer{
 
 <section id="about">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-head">
+<div class="section-head">
 
-            <div>
-                <div class="section-number">01 / ABOUT US</div>
-                <h2 class="section-title">Built around<br>good ideas.</h2>
-            </div>
+<div>
 
-            <p class="section-description">
-                Architecture should not only look good. It should work well,
-                respond to its surroundings and remain practical throughout
-                its life.
-            </p>
+<div class="section-number">01 / ABOUT US</div>
 
-        </div>
+<h2 class="section-title">
+Built around<br>
+good ideas.
+</h2>
 
+</div>
 
-        <div class="about-grid">
+<p class="section-description">
+Architecture should not only look good. It should work well,
+respond to its surroundings and remain practical throughout its life.
+</p>
 
-            <div>
-
-                <div class="about-main">
-                    <span>Point Architects</span> is an architecture,
-                    interior design and construction practice founded by
-                    <strong>Ar. Shaikh Tousif Husen</strong>.
-                </div>
-
-                <p class="about-text">
-                    Based in Kalaburagi, Karnataka, the practice works across
-                    residential, commercial, healthcare, interior, renovation
-                    and turnkey construction projects.
-                </p>
-
-                <p class="about-text">
-                    Our approach balances contemporary design, functionality,
-                    local understanding, quality construction and attention
-                    to detail. We remain practically involved with clients,
-                    engineers, contractors, vendors and site teams throughout
-                    the project.
-                </p>
-
-            </div>
+</div>
 
 
-            <div class="about-boxes">
+<div class="about-grid">
 
-                <div class="about-box">
-                    <h3>01</h3>
-                    <p>Concept & Architectural Planning</p>
-                </div>
+<div>
 
-                <div class="about-box">
-                    <h3>02</h3>
-                    <p>Interior Design & Material Selection</p>
-                </div>
+<div class="about-main">
 
-                <div class="about-box">
-                    <h3>03</h3>
-                    <p>Construction & Site Execution</p>
-                </div>
+<span>Point Architects</span> is an architecture,
+interior design and construction practice founded by
+<strong>Ar. Shaikh Tousif Husen.</strong>
 
-                <div class="about-box">
-                    <h3>04</h3>
-                    <p>Turnkey Project Management</p>
-                </div>
+</div>
 
-            </div>
+<p class="about-text">
+Based in Kalaburagi, Karnataka, the practice works across
+residential, commercial, healthcare, interior, renovation and
+turnkey construction projects.
+</p>
 
-        </div>
+<p class="about-text">
+Our approach balances contemporary design, functionality,
+local understanding, quality construction and attention to detail.
+We remain practically involved with clients, engineers, contractors,
+vendors and site teams throughout the project.
+</p>
 
-    </div>
+</div>
+
+
+<div class="about-boxes">
+
+<div class="about-box">
+<strong>01</strong>
+<p>Concept & Architectural Planning</p>
+</div>
+
+<div class="about-box">
+<strong>02</strong>
+<p>Interior Design & Material Selection</p>
+</div>
+
+<div class="about-box">
+<strong>03</strong>
+<p>Construction & Site Execution</p>
+</div>
+
+<div class="about-box">
+<strong>04</strong>
+<p>Turnkey Project Management</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
@@ -1125,154 +991,161 @@ footer{
 
 <section id="services">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-head">
+<div class="section-head">
 
-            <div>
-                <div class="section-number">02 / SERVICES</div>
-                <h2 class="section-title">What we<br>do.</h2>
-            </div>
+<div>
 
-            <p class="section-description">
-                From the first sketch to final execution, we coordinate design,
-                planning, materials and site requirements to create complete
-                project solutions.
-            </p>
+<div class="section-number">02 / SERVICES</div>
 
-        </div>
+<h2 class="section-title">
+What we<br>
+do.
+</h2>
 
+</div>
 
-        <div class="services-grid">
+<p class="section-description">
+From the first sketch to final execution, we coordinate design,
+planning, materials and site requirements to create complete
+project solutions.
+</p>
 
-            <article class="service-card">
-
-                <div class="service-number">01</div>
-
-                <h3>Architecture & Planning</h3>
-
-                <p>
-                    Complete architectural planning focused on functionality,
-                    proportion, context and long-term usability.
-                </p>
-
-                <ul class="service-list">
-                    <li>Concept development</li>
-                    <li>Architectural planning</li>
-                    <li>Space planning</li>
-                    <li>Design development</li>
-                </ul>
-
-            </article>
+</div>
 
 
-            <article class="service-card">
-
-                <div class="service-number">02</div>
-
-                <h3>Interior Design</h3>
-
-                <p>
-                    Interior environments designed around lifestyle,
-                    functionality, material quality and visual character.
-                </p>
-
-                <ul class="service-list">
-                    <li>Residential interiors</li>
-                    <li>Commercial interiors</li>
-                    <li>Material selection</li>
-                    <li>Furniture & finishes</li>
-                </ul>
-
-            </article>
+<div class="services">
 
 
-            <article class="service-card">
+<div class="service">
 
-                <div class="service-number">03</div>
+<div class="service-number">01</div>
 
-                <h3>Construction & Execution</h3>
+<h3>Architecture & Planning</h3>
 
-                <p>
-                    Practical site execution with attention to workmanship,
-                    materials, coordination and project requirements.
-                </p>
+<p>
+Complete architectural planning focused on functionality,
+proportion, context and long-term usability.
+</p>
 
-                <ul class="service-list">
-                    <li>Site coordination</li>
-                    <li>Contractor coordination</li>
-                    <li>Material management</li>
-                    <li>Quality supervision</li>
-                </ul>
+<ul>
+<li>Concept development</li>
+<li>Architectural planning</li>
+<li>Space planning</li>
+<li>Design development</li>
+</ul>
 
-            </article>
-
-
-            <article class="service-card">
-
-                <div class="service-number">04</div>
-
-                <h3>Turnkey Projects</h3>
-
-                <p>
-                    Integrated project delivery covering design, planning,
-                    construction and coordination from start to completion.
-                </p>
-
-                <ul class="service-list">
-                    <li>Design to execution</li>
-                    <li>Budget coordination</li>
-                    <li>Vendor coordination</li>
-                    <li>Project management</li>
-                </ul>
-
-            </article>
+</div>
 
 
-            <article class="service-card">
+<div class="service">
 
-                <div class="service-number">05</div>
+<div class="service-number">02</div>
 
-                <h3>Healthcare & Commercial</h3>
+<h3>Interior Design</h3>
 
-                <p>
-                    Functional environments planned around circulation,
-                    usability, operational requirements and project context.
-                </p>
+<p>
+Interior environments designed around lifestyle,
+functionality, material quality and visual character.
+</p>
 
-                <ul class="service-list">
-                    <li>Hospitals</li>
-                    <li>Commercial buildings</li>
-                    <li>Workspaces</li>
-                    <li>Functional planning</li>
-                </ul>
+<ul>
+<li>Residential interiors</li>
+<li>Commercial interiors</li>
+<li>Material selection</li>
+<li>Furniture & finishes</li>
+</ul>
 
-            </article>
+</div>
 
 
-            <article class="service-card">
+<div class="service">
 
-                <div class="service-number">06</div>
+<div class="service-number">03</div>
 
-                <h3>Renovation & Upgradation</h3>
+<h3>Construction & Execution</h3>
 
-                <p>
-                    Transforming existing spaces through thoughtful planning,
-                    improved functionality and updated finishes.
-                </p>
+<p>
+Practical site execution with attention to workmanship,
+materials, coordination and project requirements.
+</p>
 
-                <ul class="service-list">
-                    <li>Renovation planning</li>
-                    <li>Space improvement</li>
-                    <li>Interior upgrades</li>
-                    <li>Modernisation</li>
-                </ul>
+<ul>
+<li>Site coordination</li>
+<li>Contractor coordination</li>
+<li>Material management</li>
+<li>Quality supervision</li>
+</ul>
 
-            </article>
+</div>
 
-        </div>
 
-    </div>
+<div class="service">
+
+<div class="service-number">04</div>
+
+<h3>Turnkey Projects</h3>
+
+<p>
+Integrated project delivery covering design, planning,
+construction and coordination from start to completion.
+</p>
+
+<ul>
+<li>Design to execution</li>
+<li>Budget coordination</li>
+<li>Vendor coordination</li>
+<li>Project management</li>
+</ul>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-number">05</div>
+
+<h3>Healthcare & Commercial</h3>
+
+<p>
+Functional environments planned around circulation,
+usability, operational requirements and project context.
+</p>
+
+<ul>
+<li>Hospitals</li>
+<li>Commercial buildings</li>
+<li>Workspaces</li>
+<li>Functional planning</li>
+</ul>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-number">06</div>
+
+<h3>Renovation & Upgradation</h3>
+
+<p>
+Transforming existing spaces through thoughtful planning,
+improved functionality and updated finishes.
+</p>
+
+<ul>
+<li>Renovation planning</li>
+<li>Space improvement</li>
+<li>Interior upgrades</li>
+<li>Modernisation</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
@@ -1281,105 +1154,104 @@ footer{
 
 <section id="projects">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-head">
+<div class="section-head">
 
-            <div>
-                <div class="section-number">03 / PROJECTS</div>
-                <h2 class="section-title">Selected<br>work.</h2>
-            </div>
+<div>
 
-            <p class="section-description">
-                Our work spans residential villas, apartments, commercial
-                buildings, hospitals, interiors, renovations and turnkey
-                construction projects.
-            </p>
+<div class="section-number">03 / PROJECTS</div>
 
-        </div>
+<h2 class="section-title">
+Selected<br>
+work.
+</h2>
 
+</div>
 
-        <div class="project-grid">
+<p class="section-description">
+Our work spans residential villas, apartments, commercial buildings,
+hospitals, interiors, renovations and turnkey construction projects.
+</p>
 
-            <div class="project-card large">
-
-                <div class="project-bg"></div>
-                <div class="project-lines"></div>
-
-                <div class="project-info">
-                    <span>Residential</span>
-                    <h3>Contemporary Villas</h3>
-                    <p>
-                        Modern residential spaces combining clean architecture,
-                        practical planning and carefully selected materials.
-                    </p>
-                </div>
-
-            </div>
+</div>
 
 
-            <div style="display:grid;gap:18px;">
-
-                <div class="project-card">
-
-                    <div class="project-bg two"></div>
-                    <div class="project-lines"></div>
-
-                    <div class="project-info">
-                        <span>Commercial</span>
-                        <h3>Commercial Spaces</h3>
-                        <p>Functional environments designed for people and business.</p>
-                    </div>
-
-                </div>
+<div class="projects">
 
 
-                <div class="project-card">
+<div class="project">
 
-                    <div class="project-bg three"></div>
-                    <div class="project-lines"></div>
+<img
+src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=90"
+alt="Modern residential architecture"
+onerror="this.style.display='none';"
+>
 
-                    <div class="project-info">
-                        <span>Healthcare</span>
-                        <h3>Healthcare Projects</h3>
-                        <p>Planning with functionality, circulation and usability in focus.</p>
-                    </div>
+<div class="project-content">
 
-                </div>
+<span>RESIDENTIAL</span>
 
-            </div>
+<h3>Contemporary Villas</h3>
 
-        </div>
+<p>
+Modern residential spaces combining clean architecture,
+practical planning and carefully selected materials.
+</p>
+
+</div>
+
+</div>
 
 
-        <div style="height:40px"></div>
+<div style="display:grid;gap:16px;">
+
+<div class="project small">
+
+<img
+src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=90"
+alt="Commercial architecture"
+onerror="this.style.display='none';"
+>
+
+<div class="project-content">
+
+<span>COMMERCIAL</span>
+
+<h3>Commercial Spaces</h3>
+
+<p>Functional environments designed for people and business.</p>
+
+</div>
+
+</div>
 
 
-        <div class="project-types">
+<div class="project small">
 
-            <div class="project-type">
-                <strong>Residential</strong>
-                <p>Villas, apartments and homes.</p>
-            </div>
+<img
+src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=90"
+alt="Architectural building"
+onerror="this.style.display='none';"
+>
 
-            <div class="project-type">
-                <strong>Commercial</strong>
-                <p>Commercial buildings and workspaces.</p>
-            </div>
+<div class="project-content">
 
-            <div class="project-type">
-                <strong>Healthcare</strong>
-                <p>Hospitals and healthcare environments.</p>
-            </div>
+<span>ARCHITECTURE</span>
 
-            <div class="project-type">
-                <strong>Turnkey</strong>
-                <p>Complete design-to-execution solutions.</p>
-            </div>
+<h3>Built Environment</h3>
 
-        </div>
+<p>Contemporary architectural solutions with practical planning.</p>
 
-    </div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
@@ -1388,86 +1260,91 @@ footer{
 
 <section id="team">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-head">
+<div class="section-head">
 
-            <div>
-                <div class="section-number">04 / OUR TEAM</div>
-                <h2 class="section-title">People behind<br>the point.</h2>
-            </div>
+<div>
 
-            <p class="section-description">
-                A practical design and execution approach built around
-                collaboration between clients, architects, engineers,
-                contractors, vendors and site teams.
-            </p>
+<div class="section-number">04 / OUR TEAM</div>
 
-        </div>
+<h2 class="section-title">
+People behind<br>
+the point.
+</h2>
 
+</div>
 
-        <div class="team-grid">
+<p class="section-description">
+A practical design and execution approach built around collaboration
+between clients, architects, engineers, contractors, vendors and
+site teams.
+</p>
 
-            <div class="team-card">
-
-                <div class="team-avatar">TH</div>
-
-                <h3>Ar. Shaikh Tousif Husen</h3>
-
-                <div class="team-role">
-                    Architect • Entrepreneur • Builder
-                </div>
-
-                <p>
-                    Ar. Shaikh Tousif Husen is an architect and entrepreneur
-                    based in Kalaburagi, Karnataka and the founder of Point
-                    Architects.
-                </p>
-
-                <p style="margin-top:16px;">
-                    His work covers architecture, interior design and
-                    construction, including residential villas, apartments,
-                    commercial buildings, hospitals, interiors, renovations
-                    and turnkey construction projects.
-                </p>
-
-                <p style="margin-top:16px;">
-                    His design approach balances contemporary design,
-                    functionality, local understanding, quality construction
-                    and attention to detail, with practical involvement in
-                    budgeting, materials, workmanship and project management.
-                </p>
-
-            </div>
+</div>
 
 
-            <div class="team-card">
+<div class="team">
 
-                <div class="team-avatar">ZA</div>
 
-                <h3>Syed Mohammad Ayyub Zeeshan</h3>
+<div class="team-card">
 
-                <div class="team-role">
-                    Partner
-                </div>
+<div class="initial">TH</div>
 
-                <p>
-                    Syed Mohammad Ayyub Zeeshan is part of the Point Architects
-                    team, supporting the practice and contributing to the
-                    coordination and development of projects.
-                </p>
+<h3>Ar. Shaikh Tousif Husen</h3>
 
-                <p style="margin-top:16px;">
-                    Point Architects works through collaborative coordination
-                    between design, clients, engineering, vendors, contractors
-                    and site execution teams.
-                </p>
+<div class="role">
+Architect • Entrepreneur • Builder
+</div>
 
-            </div>
+<p>
+Ar. Shaikh Tousif Husen is an architect and entrepreneur based
+in Kalaburagi, Karnataka and the founder of Point Architects.
+</p>
 
-        </div>
+<p style="margin-top:15px;">
+His work covers architecture, interior design and construction,
+including residential villas, apartments, commercial buildings,
+hospitals, interiors, renovations and turnkey construction projects.
+</p>
 
-    </div>
+<p style="margin-top:15px;">
+His design approach balances contemporary design, functionality,
+local understanding, quality construction and attention to detail,
+with practical involvement in budgeting, materials, workmanship
+and project management.
+</p>
+
+</div>
+
+
+<div class="team-card">
+
+<div class="initial">ZA</div>
+
+<h3>Syed Mohammad Ayyub Zeeshan</h3>
+
+<div class="role">
+Partner
+</div>
+
+<p>
+Syed Mohammad Ayyub Zeeshan is part of the Point Architects team,
+supporting the practice and contributing to the coordination and
+development of projects.
+</p>
+
+<p style="margin-top:15px;">
+Point Architects works through collaborative coordination between
+design, clients, engineering, vendors, contractors and site
+execution teams.
+</p>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
@@ -1476,58 +1353,125 @@ footer{
 
 <section id="gallery">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-head">
+<div class="section-head">
 
-            <div>
-                <div class="section-number">05 / GALLERY</div>
-                <h2 class="section-title">Spaces in<br>focus.</h2>
-            </div>
+<div>
 
-            <p class="section-description">
-                A visual collection representing the architectural language,
-                materiality and spatial character associated with our work.
-            </p>
+<div class="section-number">05 / GALLERY</div>
 
-        </div>
+<h2 class="section-title">
+Spaces in<br>
+focus.
+</h2>
+
+</div>
+
+<p class="section-description">
+A visual collection representing architecture, interiors,
+materials and spatial character.
+</p>
+
+</div>
 
 
-        <div class="gallery-grid">
+<div class="gallery">
 
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85" alt="Modern interior architecture">
-                <div class="gallery-caption">Contemporary Interior</div>
-            </div>
 
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85" alt="Modern residential architecture">
-                <div class="gallery-caption">Residential Architecture</div>
-            </div>
+<div class="gallery-item">
 
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1200&q=85" alt="Modern living space">
-                <div class="gallery-caption">Living Spaces</div>
-            </div>
+<img
+src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=90"
+alt="Modern interior"
+onerror="this.style.display='none';"
+>
 
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85" alt="Architectural interior">
-                <div class="gallery-caption">Material & Detail</div>
-            </div>
+<div class="gallery-name">
+Contemporary Interior
+</div>
 
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85" alt="Luxury interior design">
-                <div class="gallery-caption">Interior Design</div>
-            </div>
+</div>
 
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85" alt="Modern architecture">
-                <div class="gallery-caption">Architectural Character</div>
-            </div>
 
-        </div>
+<div class="gallery-item">
 
-    </div>
+<img
+src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=90"
+alt="Luxury interior"
+onerror="this.style.display='none';"
+>
+
+<div class="gallery-name">
+Interior Design
+</div>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=90"
+alt="Modern living room"
+onerror="this.style.display='none';"
+>
+
+<div class="gallery-name">
+Living Spaces
+</div>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1200&q=90"
+alt="Modern architecture"
+onerror="this.style.display='none';"
+>
+
+<div class="gallery-name">
+Material & Detail
+</div>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=90"
+alt="Architectural interior"
+onerror="this.style.display='none';"
+>
+
+<div class="gallery-name">
+Architectural Character
+</div>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=90"
+alt="Modern house"
+onerror="this.style.display='none';"
+>
+
+<div class="gallery-name">
+Residential Architecture
+</div>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
@@ -1536,203 +1480,172 @@ footer{
 
 <section id="contact">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-head">
+<div class="section-head">
 
-            <div>
-                <div class="section-number">06 / CONTACT US</div>
-                <h2 class="section-title">Let's build<br>something.</h2>
-            </div>
+<div>
 
-            <p class="section-description">
-                Have a residential, commercial, healthcare, interior,
-                renovation or turnkey project in mind? Get in touch with
-                Point Architects.
-            </p>
+<div class="section-number">06 / CONTACT US</div>
 
-        </div>
+<h2 class="section-title">
+Let's build<br>
+something.
+</h2>
 
+</div>
 
-        <div class="contact-grid">
+<p class="section-description">
+Have a residential, commercial, healthcare, interior,
+renovation or turnkey project in mind?
+Get in touch with Point Architects.
+</p>
 
-            <div class="contact-card">
-
-                <h3>Point Architects</h3>
-
-                <div class="contact-row">
-
-                    <span class="contact-label">Location</span>
-
-                    <a
-                        class="contact-value"
-                        target="_blank"
-                        rel="noopener"
-                        href="https://www.google.com/maps/search/?api=1&query=Point+Architects+Hagarga+Road+Mecca+Colony+Kalaburagi+Karnataka+585104"
-                    >
-                        Hagarga Rd, Mecca Colony,<br>
-                        Kalaburagi, Karnataka 585104,<br>
-                        Gulbarga Karnataka India
-                    </a>
-
-                </div>
+</div>
 
 
-                <div class="contact-row">
-
-                    <span class="contact-label">Email</span>
-
-                    <a
-                        class="contact-value"
-                        href="mailto:pointarchitectsstudio@gmail.com"
-                    >
-                        pointarchitectsstudio@gmail.com
-                    </a>
-
-                </div>
+<div class="contact-grid">
 
 
-                <div class="contact-row">
+<div class="contact-card">
 
-                    <span class="contact-label">Phone</span>
-
-                    <a
-                        class="contact-value"
-                        href="tel:+917899694656"
-                    >
-                        +91 7899694656
-                    </a>
-
-                    <br>
-
-                    <a
-                        class="contact-value"
-                        href="tel:+919480941980"
-                    >
-                        +91 9480941980
-                    </a>
-
-                </div>
+<h3>Point Architects</h3>
 
 
-                <div class="contact-row">
+<div class="contact-row">
 
-                    <span class="contact-label">Instagram</span>
+<span class="label">Location</span>
 
-                    <a
-                        class="contact-value"
-                        target="_blank"
-                        rel="noopener"
-                        href="https://www.instagram.com/pointarchitects.studo/"
-                    >
-                        @pointarchitects.studo
-                    </a>
+<a
+class="value"
+href="https://www.google.com/maps/search/?api=1&query=Point+Architects+Hagarga+Road+Mecca+Colony+Kalaburagi+Karnataka+585104"
+target="_blank"
+rel="noopener"
+>
+Hagarga Rd, Mecca Colony,<br>
+Kalaburagi, Karnataka 585104,<br>
+Gulbarga Karnataka India
+</a>
 
-                </div>
-
-            </div>
-
-
-            <div class="map-box">
-
-                <div class="map-icon">⌖</div>
-
-                <h3>Find Point Architects</h3>
-
-                <p>
-                    Hagarga Rd, Mecca Colony, Kalaburagi, Karnataka 585104,
-                    Gulbarga Karnataka India
-                </p>
-
-                <div class="contact-buttons">
-
-                    <a
-                        class="btn btn-primary"
-                        target="_blank"
-                        rel="noopener"
-                        href="https://www.google.com/maps/search/?api=1&query=Point+Architects+Hagarga+Road+Mecca+Colony+Kalaburagi+Karnataka+585104"
-                    >
-                        Open Google Maps →
-                    </a>
-
-                    <a
-                        class="btn btn-outline"
-                        target="_blank"
-                        rel="noopener"
-                        href="https://www.instagram.com/pointarchitects.studo/"
-                    >
-                        Instagram →
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
+</div>
 
 
-        <!-- QR CODES -->
+<div class="contact-row">
 
-        <div class="qr-section">
+<span class="label">Email</span>
 
-            <div class="qr-card">
+<a
+class="value"
+href="mailto:pointarchitectsstudio@gmail.com"
+>
+pointarchitectsstudio@gmail.com
+</a>
 
-                <img
-                    src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https%3A%2F%2Fwww.instagram.com%2Fpointarchitects.studo%2F"
-                    alt="Point Architects Instagram QR Code"
-                >
-
-                <div>
-                    <h4>Instagram</h4>
-                    <p>
-                        Scan to open the Point Architects Instagram profile.
-                    </p>
-                </div>
-
-            </div>
+</div>
 
 
-            <div class="qr-card">
+<div class="contact-row">
 
-                <img
-                    src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https%3A%2F%2Fwww.google.com%2Fmaps%2Fsearch%2F%3Fapi%3D1%26query%3DPoint%2BArchitects%2BHagarga%2BRoad%2BMecca%2BColony%2BKalaburagi%2BKarnataka%2B585104"
-                    alt="Point Architects Google Maps QR Code"
-                >
+<span class="label">Phone</span>
 
-                <div>
-                    <h4>Google Maps</h4>
-                    <p>
-                        Scan to open the Point Architects location in Google Maps.
-                    </p>
-                </div>
+<a
+class="value"
+href="tel:+917899694656"
+>
++91 7899694656
+</a>
 
-            </div>
+<br>
 
-        </div>
+<a
+class="value"
+href="tel:+919480941980"
+>
++91 9480941980
+</a>
 
-    </div>
+</div>
+
+
+<div class="contact-row">
+
+<span class="label">Instagram</span>
+
+<a
+class="value"
+href="https://www.instagram.com/pointarchitects.studo/"
+target="_blank"
+rel="noopener"
+>
+@pointarchitects.studo
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="map">
+
+<div class="map-pin">⌖</div>
+
+<h3>Find Point Architects</h3>
+
+<p>
+Hagarga Rd, Mecca Colony, Kalaburagi, Karnataka 585104,
+Gulbarga Karnataka India
+</p>
+
+
+<div class="contact-buttons">
+
+<a
+href="https://www.google.com/maps/search/?api=1&query=Point+Architects+Hagarga+Road+Mecca+Colony+Kalaburagi+Karnataka+585104"
+target="_blank"
+rel="noopener"
+class="btn btn-primary"
+>
+Open Google Maps →
+</a>
+
+
+<a
+href="https://www.instagram.com/pointarchitects.studo/"
+target="_blank"
+rel="noopener"
+class="btn btn-outline"
+>
+Instagram →
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
-
-</main>
 
 
 <!-- ================= FOOTER ================= -->
 
 <footer>
 
-    <div class="container footer-inner">
+<div class="container footer">
 
-        <div>
-            <div class="footer-brand">POINT ARCHITECTS</div>
-            <div>Architecture • Interiors • Construction</div>
-        </div>
+<div>
+<strong>POINT ARCHITECTS</strong><br>
+Architecture • Interiors • Construction
+</div>
 
-        <div>
-            © 2026 Point Architects. All Rights Reserved.
-        </div>
+<div>
+© 2026 Point Architects. All Rights Reserved.
+</div>
 
-    </div>
+</div>
 
 </footer>
 
@@ -1741,14 +1654,9 @@ footer{
 
 function toggleMenu(){
 
-    const nav = document.getElementById("navLinks");
-
-    nav.classList.toggle("active");
+    document.getElementById("navLinks").classList.toggle("active");
 
 }
-
-
-/* Close mobile menu after clicking a link */
 
 document.querySelectorAll(".nav-links a").forEach(function(link){
 
@@ -1760,44 +1668,8 @@ document.querySelectorAll(".nav-links a").forEach(function(link){
 
 });
 
-
-/* Simple reveal animation */
-
-const observer = new IntersectionObserver(
-
-    entries => {
-
-        entries.forEach(entry => {
-
-            if(entry.isIntersecting){
-
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
-
-            }
-
-        });
-
-    },
-
-    {threshold:.08}
-
-);
-
-
-document.querySelectorAll(
-    ".service-card,.project-card,.team-card,.gallery-item,.about-box,.contact-card,.map-box,.qr-card"
-).forEach(el => {
-
-    el.style.opacity = "0";
-    el.style.transform = "translateY(25px)";
-    el.style.transition = "opacity .7s ease, transform .7s ease";
-
-    observer.observe(el);
-
-});
-
 </script>
+
 
 </body>
 </html>
