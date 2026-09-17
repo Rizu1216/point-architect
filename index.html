@@ -1,240 +1,1645 @@
-<!DOCTYPE html>
+</html><!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Point Architects | Architecture • Interiors • Planning</title>
+
 <meta name="description" content="Point Architects — architecture, interiors and planning by Tousif Shaikh and Zeeshan Chistey.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-:root{--black:#11110f;--paper:#f7f4ec;--cream:#ece5d8;--white:#fff;--gold:#b59a68;--muted:#777269;--line:rgba(20,19,16,.14)}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:"DM Sans",Arial,sans-serif;background:var(--paper);color:#171612}
-a{text-decoration:none;color:inherit}
-img{width:100%;height:100%;object-fit:cover;display:block}
-.container{width:min(1180px,calc(100% - 44px));margin:auto}
-.eyebrow{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:9px}
-.title{font:400 clamp(38px,4.5vw,56px)/1.05 "Playfair Display",serif;letter-spacing:-1px}
 
-/* NAV */
-.nav{position:absolute;top:0;left:0;width:100%;z-index:20;color:#fff;padding:25px 40px;display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:12px}
-.brand-mark{width:40px;height:40px;border:1px solid #fff;display:grid;place-items:center;font:500 25px "Playfair Display"}
-.brand-name{font-size:14px;letter-spacing:4px}.brand-sub{font-size:7px;letter-spacing:2px;opacity:.72;margin-top:4px}
-.nav-links{display:flex;gap:29px;font-size:9px;letter-spacing:1.8px}
-.nav-links a:hover{color:#d9c397}
-.menu{display:none;font-size:25px;cursor:pointer}
+:root{
+--black:#11110f;
+--paper:#f7f4ec;
+--cream:#ece5d8;
+--white:#fff;
+--gold:#b59a68;
+--muted:#777269;
+--line:rgba(20,19,16,.14);
+}
 
-/* HERO */
-.hero{height:100vh;min-height:680px;position:relative;overflow:hidden;color:#fff}
-.hero-photo{position:absolute;inset:0;background:#222}
-.hero-photo img{object-position:center 35%}
-.hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.22) 70%),linear-gradient(0deg,rgba(0,0,0,.35),transparent 50%)}
-.hero-inner{height:100%;display:flex;align-items:center;position:relative;z-index:2}
-.hero-copy{max-width:680px;padding-top:45px}
-.hero-kicker{font-size:10px;letter-spacing:3px;text-transform:uppercase;margin-bottom:17px}
-.hero h1{font:400 clamp(52px,7vw,91px)/.97 "Playfair Display",serif;letter-spacing:-3px}
-.hero h1 em{font-style:normal;color:#d4bb8a}
-.hero p{max-width:540px;margin:25px 0;font-size:13px;line-height:1.8;color:#e8e4db}
-.founders-line{font-size:10px;letter-spacing:1.7px;text-transform:uppercase}.founders-line small{display:block;font-size:8px;letter-spacing:2px;opacity:.65;margin-top:5px}
-.hero-btn{display:inline-flex;align-items:center;gap:24px;margin-top:28px;padding:14px 20px;border:1px solid rgba(255,255,255,.7);font-size:9px;letter-spacing:1.5px;transition:.3s}
-.hero-btn:hover{background:#fff;color:#111}
-.side-text{position:absolute;right:25px;top:48%;writing-mode:vertical-rl;font-size:8px;letter-spacing:4px;z-index:3}
-.scroll{position:absolute;right:42px;bottom:30px;font-size:8px;letter-spacing:2px;z-index:3;display:flex;gap:10px;align-items:center}
-.mouse{width:16px;height:30px;border:1px solid #fff;border-radius:15px}
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
 
-/* PROJECTS */
-section{padding:90px 0}
-.section-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:32px}
-.view{font-size:9px;letter-spacing:1.5px;border-bottom:1px solid;padding-bottom:5px}
-.project-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-.project{height:470px;position:relative;overflow:hidden;background:#333;color:#fff}
-.project img{transition:.7s}.project:hover img{transform:scale(1.05)}
-.project:after{content:"";position:absolute;inset:40% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.88))}
-.project-info{position:absolute;left:16px;right:16px;bottom:17px;z-index:2}
-.project-no{font-size:8px;letter-spacing:2px;margin-bottom:72px;opacity:.8}
-.project h3{font:400 21px "Playfair Display",serif}
-.project-meta{font-size:8px;opacity:.78;margin-top:5px;display:flex;gap:12px}
+html{
+scroll-behavior:smooth;
+}
 
-/* PROCESS */
-.process{background:var(--cream)}
-.process-layout{display:grid;grid-template-columns:270px 1fr;gap:60px}
-.process-copy p{font-size:11px;line-height:1.85;color:#666158;margin:20px 0}
-.outline{display:inline-block;border:1px solid;padding:12px 18px;font-size:9px;letter-spacing:1.4px}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.step-img{height:170px;margin-bottom:13px}.step-no{font-size:8px;letter-spacing:1.1px}.step h3{font:400 17px "Playfair Display",serif;margin:4px 0}.step p{font-size:9px;color:var(--muted)}
+body{
+font-family:"DM Sans",Arial,sans-serif;
+background:var(--paper);
+color:#171612;
+}
 
-/* ABOUT */
-.about{padding:0;background:var(--black);color:#fff}
-.about-grid{display:grid;grid-template-columns:1.05fr 1fr 1fr}
-.about-image{min-height:560px}.about-copy,.people{padding:78px 48px;border-left:1px solid rgba(255,255,255,.13)}
-.about .eyebrow{color:#98948a}.about-copy h2{font:400 37px/1.08 "Playfair Display",serif;margin-bottom:22px}.about-copy p,.person p{font-size:11px;line-height:1.8;color:#bbb7ae}
-.services{display:flex;gap:18px;flex-wrap:wrap;margin-top:28px;font-size:8px;letter-spacing:1.2px}
-.person{margin-bottom:35px}.person h3{font:400 23px "Playfair Display",serif}.role{font-size:8px;letter-spacing:1px;color:#98948a;margin:5px 0 9px}
+a{
+text-decoration:none;
+color:inherit;
+}
 
-/* GALLERY */
-.gallery-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
-.gallery-item{height:205px;overflow:hidden;position:relative}.gallery-item img{transition:.5s}.gallery-item:hover img{transform:scale(1.05)}
-.gallery-item span{position:absolute;left:10px;bottom:10px;color:#fff;font-size:8px;letter-spacing:1px;z-index:2}
+img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
 
-/* CONTACT */
-.contact-section{background:#e9e2d5}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}
-.contact-copy p{font-size:12px;line-height:1.8;color:#656159;max-width:470px;margin-top:18px}
-.contact-box{border-top:1px solid var(--line)}
-.contact-row{display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--line);font-size:10px}
-.contact-row span:first-child{letter-spacing:1.5px;color:var(--muted)}
-.contact-note{font-size:8px;color:var(--muted);margin-top:18px}
+.container{
+width:min(1180px,calc(100% - 44px));
+margin:auto;
+}
 
-/* FOOTER */
-footer{background:#111;color:#fff;padding:40px 0 20px}.footer-top{display:flex;justify-content:space-between;gap:25px;align-items:center;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.13)}
-.footer-brand{font-size:13px;letter-spacing:4px}.footer-brand small{display:block;color:#777;font-size:7px;letter-spacing:2px;margin-top:5px}
-.footer-quote{font:400 20px "Playfair Display",serif}.footer-bottom{padding-top:19px;display:flex;justify-content:space-between;color:#68665f;font-size:8px}
+.eyebrow{
+font-size:9px;
+letter-spacing:3px;
+text-transform:uppercase;
+color:var(--muted);
+margin-bottom:9px;
+}
 
-/* MOBILE */
+.title{
+font:400 clamp(38px,4.5vw,56px)/1.05 "Playfair Display",serif;
+letter-spacing:-1px;
+}
+
+
+/* ================= NAVIGATION ================= */
+
+.nav{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+z-index:20;
+color:#fff;
+padding:25px 40px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.brand-mark{
+width:40px;
+height:40px;
+border:1px solid #fff;
+display:grid;
+place-items:center;
+font:500 25px "Playfair Display";
+}
+
+.brand-name{
+font-size:14px;
+letter-spacing:4px;
+}
+
+.brand-sub{
+font-size:7px;
+letter-spacing:2px;
+opacity:.72;
+margin-top:4px;
+}
+
+.nav-links{
+display:flex;
+gap:29px;
+font-size:9px;
+letter-spacing:1.8px;
+}
+
+.nav-links a:hover{
+color:#d9c397;
+}
+
+.menu{
+display:none;
+font-size:25px;
+cursor:pointer;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+height:100vh;
+min-height:680px;
+position:relative;
+overflow:hidden;
+color:#fff;
+}
+
+.hero-photo{
+position:absolute;
+inset:0;
+background:#222;
+}
+
+.hero-photo img{
+object-position:center 35%;
+}
+
+.hero-photo:after{
+content:"";
+position:absolute;
+inset:0;
+
+background:
+linear-gradient(
+90deg,
+rgba(0,0,0,.72),
+rgba(0,0,0,.22) 70%
+),
+linear-gradient(
+0deg,
+rgba(0,0,0,.35),
+transparent 50%
+);
+}
+
+.hero-inner{
+height:100%;
+display:flex;
+align-items:center;
+position:relative;
+z-index:2;
+}
+
+.hero-copy{
+max-width:680px;
+padding-top:45px;
+}
+
+.hero-kicker{
+font-size:10px;
+letter-spacing:3px;
+text-transform:uppercase;
+margin-bottom:17px;
+}
+
+.hero h1{
+font:400 clamp(52px,7vw,91px)/.97 "Playfair Display",serif;
+letter-spacing:-3px;
+}
+
+.hero h1 em{
+font-style:normal;
+color:#d4bb8a;
+}
+
+.hero p{
+max-width:540px;
+margin:25px 0;
+font-size:13px;
+line-height:1.8;
+color:#e8e4db;
+}
+
+.founders-line{
+font-size:10px;
+letter-spacing:1.7px;
+text-transform:uppercase;
+}
+
+.founders-line small{
+display:block;
+font-size:8px;
+letter-spacing:2px;
+opacity:.65;
+margin-top:5px;
+}
+
+.hero-btn{
+display:inline-flex;
+align-items:center;
+gap:24px;
+margin-top:28px;
+padding:14px 20px;
+border:1px solid rgba(255,255,255,.7);
+font-size:9px;
+letter-spacing:1.5px;
+transition:.3s;
+}
+
+.hero-btn:hover{
+background:#fff;
+color:#111;
+}
+
+.side-text{
+position:absolute;
+right:25px;
+top:48%;
+writing-mode:vertical-rl;
+font-size:8px;
+letter-spacing:4px;
+z-index:3;
+}
+
+.scroll{
+position:absolute;
+right:42px;
+bottom:30px;
+font-size:8px;
+letter-spacing:2px;
+z-index:3;
+display:flex;
+gap:10px;
+align-items:center;
+}
+
+.mouse{
+width:16px;
+height:30px;
+border:1px solid #fff;
+border-radius:15px;
+}
+
+
+/* ================= PROJECTS ================= */
+
+section{
+padding:90px 0;
+}
+
+.section-head{
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+margin-bottom:32px;
+}
+
+.view{
+font-size:9px;
+letter-spacing:1.5px;
+border-bottom:1px solid;
+padding-bottom:5px;
+}
+
+.project-grid{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:12px;
+}
+
+.project{
+height:470px;
+position:relative;
+overflow:hidden;
+background:#333;
+color:#fff;
+}
+
+.project img{
+transition:.7s;
+}
+
+.project:hover img{
+transform:scale(1.05);
+}
+
+.project:after{
+content:"";
+position:absolute;
+inset:40% 0 0;
+background:linear-gradient(
+transparent,
+rgba(0,0,0,.88)
+);
+}
+
+.project-info{
+position:absolute;
+left:16px;
+right:16px;
+bottom:17px;
+z-index:2;
+}
+
+.project-no{
+font-size:8px;
+letter-spacing:2px;
+margin-bottom:72px;
+opacity:.8;
+}
+
+.project h3{
+font:400 21px "Playfair Display",serif;
+}
+
+.project-meta{
+font-size:8px;
+opacity:.78;
+margin-top:5px;
+display:flex;
+gap:12px;
+}
+
+
+/* ================= PROCESS ================= */
+
+.process{
+background:var(--cream);
+}
+
+.process-layout{
+display:grid;
+grid-template-columns:270px 1fr;
+gap:60px;
+}
+
+.process-copy p{
+font-size:11px;
+line-height:1.85;
+color:#666158;
+margin:20px 0;
+}
+
+.outline{
+display:inline-block;
+border:1px solid;
+padding:12px 18px;
+font-size:9px;
+letter-spacing:1.4px;
+}
+
+.steps{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:14px;
+}
+
+.step-img{
+height:170px;
+margin-bottom:13px;
+}
+
+.step-no{
+font-size:8px;
+letter-spacing:1.1px;
+}
+
+.step h3{
+font:400 17px "Playfair Display",serif;
+margin:4px 0;
+}
+
+.step p{
+font-size:9px;
+color:var(--muted);
+}
+
+
+/* ================= ABOUT ================= */
+
+.about{
+padding:0;
+background:var(--black);
+color:#fff;
+}
+
+.about-grid{
+display:grid;
+grid-template-columns:1.05fr 1fr 1fr;
+}
+
+.about-image{
+min-height:560px;
+}
+
+.about-copy,
+.people{
+padding:78px 48px;
+border-left:1px solid rgba(255,255,255,.13);
+}
+
+.about .eyebrow{
+color:#98948a;
+}
+
+.about-copy h2{
+font:400 37px/1.08 "Playfair Display",serif;
+margin-bottom:22px;
+}
+
+.about-copy p,
+.person p{
+font-size:11px;
+line-height:1.8;
+color:#bbb7ae;
+}
+
+.services{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+margin-top:28px;
+font-size:8px;
+letter-spacing:1.2px;
+}
+
+.person{
+margin-bottom:35px;
+}
+
+.person h3{
+font:400 23px "Playfair Display",serif;
+}
+
+.role{
+font-size:8px;
+letter-spacing:1px;
+color:#98948a;
+margin:5px 0 9px;
+}
+
+
+/* ================= GALLERY ================= */
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(6,1fr);
+gap:8px;
+}
+
+.gallery-item{
+height:205px;
+overflow:hidden;
+position:relative;
+}
+
+.gallery-item img{
+transition:.5s;
+}
+
+.gallery-item:hover img{
+transform:scale(1.05);
+}
+
+.gallery-item span{
+position:absolute;
+left:10px;
+bottom:10px;
+color:#fff;
+font-size:8px;
+letter-spacing:1px;
+z-index:2;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact-section{
+background:#e9e2d5;
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:70px;
+}
+
+.contact-copy p{
+font-size:12px;
+line-height:1.8;
+color:#656159;
+max-width:470px;
+margin-top:18px;
+}
+
+.contact-box{
+border-top:1px solid var(--line);
+}
+
+.contact-row{
+display:flex;
+justify-content:space-between;
+padding:16px 0;
+border-bottom:1px solid var(--line);
+font-size:10px;
+}
+
+.contact-row span:first-child{
+letter-spacing:1.5px;
+color:var(--muted);
+}
+
+.contact-note{
+font-size:8px;
+color:var(--muted);
+margin-top:18px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+background:#111;
+color:#fff;
+padding:40px 0 20px;
+}
+
+.footer-top{
+display:flex;
+justify-content:space-between;
+gap:25px;
+align-items:center;
+padding-bottom:28px;
+border-bottom:1px solid rgba(255,255,255,.13);
+}
+
+.footer-brand{
+font-size:13px;
+letter-spacing:4px;
+}
+
+.footer-brand small{
+display:block;
+color:#777;
+font-size:7px;
+letter-spacing:2px;
+margin-top:5px;
+}
+
+.footer-quote{
+font:400 20px "Playfair Display",serif;
+}
+
+.footer-bottom{
+padding-top:19px;
+display:flex;
+justify-content:space-between;
+color:#68665f;
+font-size:8px;
+}
+
+
+/* ================= TABLET ================= */
+
 @media(max-width:980px){
-.nav{padding:20px}.nav-links{display:none}.menu{display:block}.nav-links.open{display:flex;position:absolute;top:70px;left:15px;right:15px;background:rgba(17,17,15,.97);padding:22px;flex-direction:column;gap:18px}
-.container{width:calc(100% - 32px)}.side-text{display:none}.scroll{right:20px}
-.project-grid{grid-template-columns:repeat(2,1fr)}.process-layout{grid-template-columns:1fr;gap:35px}.steps{grid-template-columns:repeat(2,1fr)}
-.about-grid{grid-template-columns:1fr}.about-image{height:430px;min-height:0}.about-copy,.people{border-left:0;border-top:1px solid rgba(255,255,255,.13);padding:55px 25px}
-.gallery-grid{grid-template-columns:repeat(3,1fr)}.contact-grid{grid-template-columns:1fr;gap:40px}
-.footer-top{flex-direction:column;align-items:flex-start}
+
+.nav{
+padding:20px;
 }
+
+.nav-links{
+display:none;
+}
+
+.menu{
+display:block;
+}
+
+.nav-links.open{
+display:flex;
+position:absolute;
+top:70px;
+left:15px;
+right:15px;
+background:rgba(17,17,15,.97);
+padding:22px;
+flex-direction:column;
+gap:18px;
+}
+
+.container{
+width:calc(100% - 32px);
+}
+
+.side-text{
+display:none;
+}
+
+.scroll{
+right:20px;
+}
+
+.project-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.process-layout{
+grid-template-columns:1fr;
+gap:35px;
+}
+
+.steps{
+grid-template-columns:repeat(2,1fr);
+}
+
+.about-grid{
+grid-template-columns:1fr;
+}
+
+.about-image{
+height:430px;
+min-height:0;
+}
+
+.about-copy,
+.people{
+border-left:0;
+border-top:1px solid rgba(255,255,255,.13);
+padding:55px 25px;
+}
+
+.gallery-grid{
+grid-template-columns:repeat(3,1fr);
+}
+
+.contact-grid{
+grid-template-columns:1fr;
+gap:40px;
+}
+
+.footer-top{
+flex-direction:column;
+align-items:flex-start;
+}
+
+}
+
+
+/* ================= MOBILE ================= */
+
 @media(max-width:540px){
-section{padding:70px 0}.hero{min-height:760px}.hero h1{font-size:48px;letter-spacing:-2px}.hero-copy{padding-top:65px}
-.project-grid,.steps{grid-template-columns:1fr}.project{height:430px}.gallery-grid{grid-template-columns:repeat(2,1fr)}.gallery-item{height:180px}
-.footer-bottom{flex-direction:column;align-items:flex-start;gap:10px}
+
+section{
+padding:70px 0;
 }
+
+.hero{
+min-height:760px;
+}
+
+.hero h1{
+font-size:48px;
+letter-spacing:-2px;
+}
+
+.hero-copy{
+padding-top:65px;
+}
+
+.project-grid,
+.steps{
+grid-template-columns:1fr;
+}
+
+.project{
+height:430px;
+}
+
+.gallery-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.gallery-item{
+height:180px;
+}
+
+.footer-bottom{
+flex-direction:column;
+align-items:flex-start;
+gap:10px;
+}
+
+}
+
 </style>
 </head>
 
+
 <body>
+
+
+<!-- ================= NAVIGATION ================= -->
+
 <header class="nav">
-  <a class="brand" href="#home">
-    <div class="brand-mark">P</div>
-    <div><div class="brand-name">POINT ARCHITECTS</div><div class="brand-sub">ARCHITECTURE • INTERIORS • PLANNING</div></div>
-  </a>
-  <nav class="nav-links">
-    <a href="#home">HOME</a><a href="#projects">PROJECTS</a><a href="#process">PROCESS</a><a href="#about">STUDIO</a><a href="#contact">CONTACT</a>
-  </nav>
-  <div class="menu">☰</div>
+
+<a class="brand" href="#home">
+
+<div class="brand-mark">P</div>
+
+<div>
+
+<div class="brand-name">
+POINT ARCHITECTS
+</div>
+
+<div class="brand-sub">
+ARCHITECTURE • INTERIORS • PLANNING
+</div>
+
+</div>
+
+</a>
+
+
+<nav class="nav-links">
+
+<a href="#home">HOME</a>
+
+<a href="#projects">PROJECTS</a>
+
+<a href="#process">PROCESS</a>
+
+<a href="#about">STUDIO</a>
+
+<a href="#contact">CONTACT</a>
+
+</nav>
+
+
+<div class="menu">
+☰
+</div>
+
 </header>
 
+
+
+<!-- ================= HERO ================= -->
+
 <section class="hero" id="home">
-  <div class="hero-photo"><img src="images/project-01.jpg" alt="Point Architects residential project"></div>
-  <div class="container hero-inner">
-    <div class="hero-copy">
-      <div class="hero-kicker">Point Architects</div>
-      <h1>Spaces with<br>Purpose.<br>Design with <em>Point.</em></h1>
-      <p>Architecture, interiors and planning shaped around people, place and everyday life — from the first idea to the final built form.</p>
-      <div class="founders-line">Tousif Shaikh &nbsp; | &nbsp; Zeeshan Chistey<small>CO-FOUNDERS • PRINCIPAL ARCHITECTS</small></div>
-      <a class="hero-btn" href="#projects">EXPLORE PROJECTS <b>→</b></a>
-    </div>
-  </div>
-  <div class="side-text">ARCHITECTURE • INTERIORS • PLANNING</div>
-  <div class="scroll">SCROLL TO EXPLORE <div class="mouse"></div></div>
+
+
+<div class="hero-photo">
+
+<!-- IMPORTANT: image is in the ROOT GitHub folder -->
+
+<img
+src="project-01.jpg"
+alt="Point Architects residential project"
+>
+
+</div>
+
+
+<div class="container hero-inner">
+
+<div class="hero-copy">
+
+
+<div class="hero-kicker">
+Point Architects
+</div>
+
+
+<h1>
+
+Spaces with<br>
+
+Purpose.<br>
+
+Design with <em>Point.</em>
+
+</h1>
+
+
+<p>
+
+Architecture, interiors and planning shaped around people,
+place and everyday life — from the first idea to the final
+built form.
+
+</p>
+
+
+<div class="founders-line">
+
+TOUSIF SHAIKH
+&nbsp; | &nbsp;
+ZEESHAN CHISTEY
+
+<small>
+CO-FOUNDERS • PRINCIPAL ARCHITECTS
+</small>
+
+</div>
+
+
+<a class="hero-btn" href="#projects">
+
+EXPLORE PROJECTS
+
+<b>→</b>
+
+</a>
+
+
+</div>
+
+</div>
+
+
+<div class="side-text">
+ARCHITECTURE • INTERIORS • PLANNING
+</div>
+
+
+<div class="scroll">
+
+SCROLL TO EXPLORE
+
+<div class="mouse"></div>
+
+</div>
+
+
 </section>
+
+
+
+<!-- ================= PROJECTS ================= -->
 
 <section id="projects">
+
 <div class="container">
-  <div class="section-head">
-    <div><div class="eyebrow">Selected Work</div><h2 class="title">Projects by Point</h2></div>
-    <a class="view" href="#contact">START A PROJECT →</a>
-  </div>
-  <div class="project-grid">
-    <article class="project"><img src="images/project-01.jpg" alt="Residential architecture project"><div class="project-info"><div class="project-no">01</div><h3>Contemporary Residence</h3><div class="project-meta"><span>RESIDENTIAL</span><span>INDIA</span></div></div></article>
-    <article class="project"><img src="images/project-02.jpg" alt="Mr. Yasar Ali residential building"><div class="project-info"><div class="project-no">02</div><h3>Mr. Yasar Ali Residence</h3><div class="project-meta"><span>RESIDENTIAL</span><span>INDIA</span></div></div></article>
-    <article class="project"><img src="images/project-03.jpg" alt="Gulbarga Hospital exterior"><div class="project-info"><div class="project-no">03</div><h3>Gulbarga Hospital</h3><div class="project-meta"><span>HEALTHCARE</span><span>INDIA</span></div></div></article>
-    <article class="project"><img src="images/project-04.jpg" alt="Gulbarga Hospital alternate view"><div class="project-info"><div class="project-no">04</div><h3>Gulbarga Hospital — View</h3><div class="project-meta"><span>HEALTHCARE</span><span>INDIA</span></div></div></article>
-    <article class="project"><img src="images/project-05.jpg" alt="Khan Manzil residence"><div class="project-info"><div class="project-no">05</div><h3>Khan Manzil</h3><div class="project-meta"><span>RESIDENTIAL</span><span>INDIA</span></div></div></article>
-  </div>
+
+
+<div class="section-head">
+
+<div>
+
+<div class="eyebrow">
+Selected Work
 </div>
+
+<h2 class="title">
+Projects by Point
+</h2>
+
+</div>
+
+
+<a class="view" href="#contact">
+START A PROJECT →
+</a>
+
+</div>
+
+
+
+<div class="project-grid">
+
+
+<article class="project">
+
+<img
+src="project-01.jpg"
+alt="Contemporary residential architecture project"
+>
+
+<div class="project-info">
+
+<div class="project-no">
+01
+</div>
+
+<h3>
+Contemporary Residence
+</h3>
+
+<div class="project-meta">
+
+<span>RESIDENTIAL</span>
+<span>INDIA</span>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<article class="project">
+
+<img
+src="project-02.jpg"
+alt="Mr. Yasar Ali residential building"
+>
+
+<div class="project-info">
+
+<div class="project-no">
+02
+</div>
+
+<h3>
+Mr. Yasar Ali Residence
+</h3>
+
+<div class="project-meta">
+
+<span>RESIDENTIAL</span>
+<span>INDIA</span>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<article class="project">
+
+<img
+src="project-03.jpg"
+alt="Gulbarga Hospital exterior"
+>
+
+<div class="project-info">
+
+<div class="project-no">
+03
+</div>
+
+<h3>
+Gulbarga Hospital
+</h3>
+
+<div class="project-meta">
+
+<span>HEALTHCARE</span>
+<span>INDIA</span>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<article class="project">
+
+<img
+src="project-04.jpg"
+alt="Gulbarga Hospital alternate view"
+>
+
+<div class="project-info">
+
+<div class="project-no">
+04
+</div>
+
+<h3>
+Gulbarga Hospital — View
+</h3>
+
+<div class="project-meta">
+
+<span>HEALTHCARE</span>
+<span>INDIA</span>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<article class="project">
+
+<img
+src="project-05.jpg"
+alt="Khan Manzil residence"
+>
+
+<div class="project-info">
+
+<div class="project-no">
+05
+</div>
+
+<h3>
+Khan Manzil
+</h3>
+
+<div class="project-meta">
+
+<span>RESIDENTIAL</span>
+<span>INDIA</span>
+
+</div>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
 </section>
+
+
+
+<!-- ================= PROCESS ================= -->
 
 <section class="process" id="process">
+
 <div class="container process-layout">
-  <div class="process-copy">
-    <div class="eyebrow">The Point Approach</div>
-    <h2 class="title">From Idea<br>to Reality</h2>
-    <p>We develop each project through a clear design journey, balancing function, character, context and buildability.</p>
-    <a class="outline" href="#contact">DISCUSS YOUR PROJECT →</a>
-  </div>
-  <div class="steps">
-    <div class="step"><div class="step-img"><img src="images/project-01.jpg" alt="Concept"></div><div class="step-no">01. CONCEPT</div><h3>Understand</h3><p>Brief, context & vision</p></div>
-    <div class="step"><div class="step-img"><img src="images/project-05.jpg" alt="Planning"></div><div class="step-no">02. PLANNING</div><h3>Develop</h3><p>Plans & spatial strategy</p></div>
-    <div class="step"><div class="step-img"><img src="images/project-03.jpg" alt="Visualisation"></div><div class="step-no">03. VISUALISE</div><h3>Experience</h3><p>3D & material direction</p></div>
-    <div class="step"><div class="step-img"><img src="images/project-04.jpg" alt="Execution"></div><div class="step-no">04. EXECUTE</div><h3>Realise</h3><p>Details & final outcome</p></div>
-  </div>
+
+
+<div class="process-copy">
+
+<div class="eyebrow">
+The Point Approach
 </div>
+
+<h2 class="title">
+From Idea<br>
+to Reality
+</h2>
+
+
+<p>
+
+We develop each project through a clear design journey,
+balancing function, character, context and buildability.
+
+</p>
+
+
+<a class="outline" href="#contact">
+
+DISCUSS YOUR PROJECT →
+
+</a>
+
+</div>
+
+
+
+<div class="steps">
+
+
+<div class="step">
+
+<div class="step-img">
+
+<img
+src="project-01.jpg"
+alt="Point Architects concept"
+>
+
+</div>
+
+<div class="step-no">
+01. CONCEPT
+</div>
+
+<h3>
+Understand
+</h3>
+
+<p>
+Brief, context & vision
+</p>
+
+</div>
+
+
+
+<div class="step">
+
+<div class="step-img">
+
+<img
+src="project-05.jpg"
+alt="Point Architects planning"
+>
+
+</div>
+
+<div class="step-no">
+02. PLANNING
+</div>
+
+<h3>
+Develop
+</h3>
+
+<p>
+Plans & spatial strategy
+</p>
+
+</div>
+
+
+
+<div class="step">
+
+<div class="step-img">
+
+<img
+src="project-03.jpg"
+alt="Point Architects visualisation"
+>
+
+</div>
+
+<div class="step-no">
+03. VISUALISE
+</div>
+
+<h3>
+Experience
+</h3>
+
+<p>
+3D & material direction
+</p>
+
+</div>
+
+
+
+<div class="step">
+
+<div class="step-img">
+
+<img
+src="project-04.jpg"
+alt="Point Architects execution"
+>
+
+</div>
+
+<div class="step-no">
+04. EXECUTE
+</div>
+
+<h3>
+Realise
+</h3>
+
+<p>
+Details & final outcome
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
 </section>
+
+
+
+<!-- ================= STUDIO ================= -->
 
 <section class="about" id="about">
+
 <div class="about-grid">
-  <div class="about-image"><img src="images/project-02.jpg" alt="Point Architects project"></div>
-  <div class="about-copy">
-    <div class="eyebrow">The Studio</div>
-    <h2>Thoughtful architecture for the way people live, work and connect.</h2>
-    <p>Point Architects is an architecture and design studio led by Tousif Shaikh and Zeeshan Chistey. Our portfolio brings together residential, healthcare and other built-environment projects with a focus on practical planning and distinctive visual character.</p>
-    <div class="services"><span>ARCHITECTURE</span><span>INTERIORS</span><span>PLANNING</span><span>3D VISUALISATION</span></div>
-  </div>
-  <div class="people">
-    <div class="eyebrow">People Behind Point</div>
-    <div class="person"><h3>Tousif Shaikh</h3><div class="role">CO-FOUNDER • PRINCIPAL ARCHITECT</div><p>Official biography, qualification and experience can be added here.</p></div>
-    <div class="person"><h3>Zeeshan Chistey</h3><div class="role">CO-FOUNDER • PRINCIPAL ARCHITECT</div><p>Official biography, qualification and experience can be added here.</p></div>
-  </div>
+
+
+<div class="about-image">
+
+<img
+src="project-02.jpg"
+alt="Point Architects project"
+>
+
 </div>
+
+
+
+<div class="about-copy">
+
+<div class="eyebrow">
+The Studio
+</div>
+
+
+<h2>
+
+Thoughtful architecture for the way people live,
+work and connect.
+
+</h2>
+
+
+<p>
+
+Point Architects is an architecture and design studio
+led by Tousif Shaikh and Zeeshan Chistey.
+
+Our portfolio brings together residential, healthcare
+and other built-environment projects with a focus on
+practical planning and distinctive visual character.
+
+</p>
+
+
+<div class="services">
+
+<span>ARCHITECTURE</span>
+
+<span>INTERIORS</span>
+
+<span>PLANNING</span>
+
+<span>3D VISUALISATION</span>
+
+</div>
+
+
+</div>
+
+
+
+<div class="people">
+
+
+<div class="eyebrow">
+People Behind Point
+</div>
+
+
+<div class="person">
+
+<h3>
+Tousif Shaikh
+</h3>
+
+<div class="role">
+CO-FOUNDER • PRINCIPAL ARCHITECT
+</div>
+
+<p>
+Official biography, qualification and experience can
+be added here.
+</p>
+
+</div>
+
+
+
+<div class="person">
+
+<h3>
+Zeeshan Chistey
+</h3>
+
+<div class="role">
+CO-FOUNDER • PRINCIPAL ARCHITECT
+</div>
+
+<p>
+Official biography, qualification and experience can
+be added here.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
 </section>
+
+
+
+<!-- ================= VISUAL JOURNAL ================= -->
 
 <section>
+
 <div class="container">
-  <div class="section-head"><div><div class="eyebrow">Visual Journal</div><h2 class="title">Architecture in Detail</h2></div><a class="view" href="#contact">FOLLOW POINT →</a></div>
-  <div class="gallery-grid">
-    <div class="gallery-item"><img src="images/project-01.jpg" alt=""><span>01 / RESIDENCE</span></div>
-    <div class="gallery-item"><img src="images/project-02.jpg" alt=""><span>02 / RESIDENCE</span></div>
-    <div class="gallery-item"><img src="images/project-03.jpg" alt=""><span>03 / HEALTHCARE</span></div>
-    <div class="gallery-item"><img src="images/project-04.jpg" alt=""><span>04 / DETAIL</span></div>
-    <div class="gallery-item"><img src="images/project-05.jpg" alt=""><span>05 / KHAN MANZIL</span></div>
-    <div class="gallery-item"><img src="images/project-01.jpg" alt=""><span>06 / POINT</span></div>
-  </div>
+
+
+<div class="section-head">
+
+<div>
+
+<div class="eyebrow">
+Visual Journal
 </div>
+
+<h2 class="title">
+Architecture in Detail
+</h2>
+
+</div>
+
+
+<a class="view" href="#contact">
+FOLLOW POINT →
+</a>
+
+</div>
+
+
+
+<div class="gallery-grid">
+
+
+<div class="gallery-item">
+
+<img
+src="project-01.jpg"
+alt="Residential architecture"
+>
+
+<span>
+01 / RESIDENCE
+</span>
+
+</div>
+
+
+
+<div class="gallery-item">
+
+<img
+src="project-02.jpg"
+alt="Residential architecture"
+>
+
+<span>
+02 / RESIDENCE
+</span>
+
+</div>
+
+
+
+<div class="gallery-item">
+
+<img
+src="project-03.jpg"
+alt="Healthcare architecture"
+>
+
+<span>
+03 / HEALTHCARE
+</span>
+
+</div>
+
+
+
+<div class="gallery-item">
+
+<img
+src="project-04.jpg"
+alt="Architecture detail"
+>
+
+<span>
+04 / DETAIL
+</span>
+
+</div>
+
+
+
+<div class="gallery-item">
+
+<img
+src="project-05.jpg"
+alt="Khan Manzil"
+>
+
+<span>
+05 / KHAN MANZIL
+</span>
+
+</div>
+
+
+
+<div class="gallery-item">
+
+<img
+src="project-01.jpg"
+alt="Point Architects"
+>
+
+<span>
+06 / POINT
+</span>
+
+</div>
+
+
+</div>
+
+</div>
+
 </section>
+
+
+
+<!-- ================= CONTACT ================= -->
 
 <section class="contact-section" id="contact">
+
 <div class="container contact-grid">
-  <div class="contact-copy">
-    <div class="eyebrow">Start a Conversation</div>
-    <h2 class="title">Have a space<br>in mind?</h2>
-    <p>Tell us about your project, site, requirements and ideas. Replace the contact details below with Point Architects' official information before publishing.</p>
-  </div>
-  <div class="contact-box">
-    <div class="contact-row"><span>EMAIL</span><strong>YOUR EMAIL</strong></div>
-    <div class="contact-row"><span>PHONE / WHATSAPP</span><strong>YOUR NUMBER</strong></div>
-    <div class="contact-row"><span>INSTAGRAM</span><strong>@YOUR_INSTAGRAM</strong></div>
-    <div class="contact-row"><span>LOCATION</span><strong>INDIA</strong></div>
-    <div class="contact-note">Replace the placeholders with the studio's official details.</div>
-  </div>
+
+
+<div class="contact-copy">
+
+<div class="eyebrow">
+Start a Conversation
 </div>
+
+
+<h2 class="title">
+
+Have a space<br>
+in mind?
+
+</h2>
+
+
+<p>
+
+Tell us about your project, site, requirements and ideas.
+
+Replace the contact details with Point Architects'
+official information before publishing.
+
+</p>
+
+</div>
+
+
+
+<div class="contact-box">
+
+
+<div class="contact-row">
+
+<span>
+EMAIL
+</span>
+
+<strong>
+YOUR EMAIL
+</strong>
+
+</div>
+
+
+
+<div class="contact-row">
+
+<span>
+PHONE / WHATSAPP
+</span>
+
+<strong>
+YOUR NUMBER
+</strong>
+
+</div>
+
+
+
+<div class="contact-row">
+
+<span>
+INSTAGRAM
+</span>
+
+<strong>
+@YOUR_INSTAGRAM
+</strong>
+
+</div>
+
+
+
+<div class="contact-row">
+
+<span>
+LOCATION
+</span>
+
+<strong>
+INDIA
+</strong>
+
+</div>
+
+
+
+<div class="contact-note">
+
+Replace the placeholders with the studio's official details.
+
+</div>
+
+
+</div>
+
+</div>
+
 </section>
 
+
+
+<!-- ================= FOOTER ================= -->
+
 <footer>
+
 <div class="container">
-  <div class="footer-top">
-    <div class="footer-brand">POINT ARCHITECTS<small>ARCHITECTURE • INTERIORS • PLANNING</small></div>
-    <div class="footer-quote">Designed with purpose.</div>
-  </div>
-  <div class="footer-bottom"><span>© 2026 Point Architects. All rights reserved.</span><a href="#home">↑ TOP</a></div>
+
+
+<div class="footer-top">
+
+
+<div class="footer-brand">
+
+POINT ARCHITECTS
+
+<small>
+ARCHITECTURE • INTERIORS • PLANNING
+</small>
+
 </div>
+
+
+<div class="footer-quote">
+
+Designed with purpose.
+
+</div>
+
+
+</div>
+
+
+
+<div class="footer-bottom">
+
+<span>
+© 2026 Point Architects. All rights reserved.
+</span>
+
+
+<a href="#home">
+↑ TOP
+</a>
+
+</div>
+
+
+</div>
+
 </footer>
 
+
+
 <script>
-const menu=document.querySelector('.menu');
-const nav=document.querySelector('.nav-links');
-menu.addEventListener('click',()=>nav.classList.toggle('open'));
-nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+
+const menu = document.querySelector('.menu');
+
+const nav = document.querySelector('.nav-links');
+
+menu.addEventListener('click', () => {
+
+nav.classList.toggle('open');
+
+});
+
+
+nav.querySelectorAll('a').forEach(a => {
+
+a.addEventListener('click', () => {
+
+nav.classList.remove('open');
+
+});
+
+});
+
 </script>
+
+
 </body>
 </html>
